@@ -1,0 +1,245 @@
+Script started on 2025-04-05 21:20:09+05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="111" LINES="68"]
+[?2004h]0;kartoger@ROGIRIS: ~/Codeby_Devops[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m~/Codeby_Devops[;32m]
+[;32m└─[1;34m$[0m exitscript ps-log.txt[C[C[C[Cls[Krm script.txt [C[C[C[Cls[Kдыrm test.txt[C[C[C[Cls[Krm ps.txt [K[K[K[K[K[K[K[K[K[Kps -aux
+[?2004lUSER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1  22756 13840 ?        Ss   20:52   0:00 /sbin/init
+root           2  0.0  0.0   2776  1920 ?        Sl   20:52   0:00 /init
+root           6  0.0  0.0   2776     4 ?        Sl   20:52   0:00 plan9 --control-socket 7 --log-level 4 --ser
+root          32  0.0  0.0   8368  7048 ?        Ss   20:52   0:00 /usr/sbin/haveged --Foreground --verbose=1
+root          37  0.0  0.2  50280 16844 ?        Ss   20:52   0:00 /usr/lib/systemd/systemd-journald
+root          48  0.0  0.1  32728 10504 ?        Ss   20:52   0:00 /usr/lib/systemd/systemd-udevd
+root         131  0.0  0.0   4268  2568 ?        Ss   20:52   0:00 /usr/sbin/cron -f
+message+     134  0.0  0.0   7180  4440 ?        Ss   20:52   0:00 /usr/bin/dbus-daemon --system --address=syst
+polkitd      173  0.0  0.1 381540 11112 ?        Ssl  20:52   0:00 /usr/lib/polkit-1/polkitd --no-debug --log-l
+root         180  0.0  0.1  17932  8384 ?        Ss   20:52   0:00 /usr/lib/systemd/systemd-logind
+root         201  0.0  0.0   5156  1616 hvc0     Ss+  20:52   0:00 /sbin/agetty -o -- \u --noreset --noclear --
+root         202  0.0  0.0   5112  1600 tty1     Ss+  20:52   0:00 /sbin/agetty -o -- \u --noreset --noclear - 
+root         229  0.0  0.0   2780   204 ?        Ss   20:52   0:00 /init
+root         230  0.1  0.0   2780   208 ?        S    20:52   0:01 /init
+kartoger     231  0.0  0.0   7416  4280 pts/0    Ss   20:52   0:00 -bash
+root         232  0.0  0.0   7264  4236 ?        Ss   20:52   0:00 login -- kartoger
+kartoger     247  0.0  0.1  22032 12748 ?        Ss   20:52   0:00 /usr/lib/systemd/systemd --user
+kartoger     249  0.0  0.0  21664  1616 ?        S    20:52   0:00 (sd-pam)
+kartoger     285  0.0  0.0   7176  1792 ?        Ss   20:52   0:00 /usr/bin/mpris-proxy
+kartoger     286  0.0  0.0  93672  7768 ?        Ssl  20:52   0:00 /usr/bin/pipewire
+kartoger     287  0.0  0.0  82008  5092 ?        Ssl  20:52   0:00 /usr/bin/pipewire -c filter-chain.conf
+kartoger     288  0.0  0.1 396240 15624 ?        Ssl  20:52   0:00 /usr/bin/wireplumber
+kartoger     289  0.0  0.0   4332  3660 pts/1    Ss+  20:52   0:00 -bash
+kartoger     290  0.0  0.1  95936  8064 ?        Ssl  20:52   0:00 /usr/bin/pipewire-pulse
+kartoger     298  0.0  0.0   6636  3528 ?        Ss   20:52   0:00 /usr/bin/dbus-daemon --session --address=sys
+rtkit        308  0.0  0.0  21428  1628 ?        SNsl 20:52   0:00 /usr/libexec/rtkit-daemon
+root         374  0.0  0.0   2780   208 ?        Ss   20:53   0:00 /init
+root         375  0.0  0.0   2780   212 ?        S    20:53   0:00 /init
+kartoger     381  0.0  0.0   7416  4280 pts/3    Ss   20:53   0:00 -bash
+kartoger     430  0.0  0.0   7428  4212 pts/3    S+   20:59   0:00 nano ps-log.txt
+kartoger     486  0.0  0.0  10328  5248 ?        S    21:05   0:00 top -b
+kartoger     597  0.1  0.0  10328  5276 ?        S    21:19   0:00 top -b -d 1
+kartoger     605  0.0  0.0   5564  1152 pts/0    S+   21:20   0:00 script ps-log.txt
+kartoger     606  0.0  0.0   7408  4104 pts/2    Ss   21:20   0:00 bash -i
+kartoger     609  0.0  0.0   9324  4112 pts/2    R+   21:20   0:00 ps -aux
+
+[?2004h]0;kartoger@ROGIRIS: ~/Codeby_Devops[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m~/Codeby_Devops[;32m]
+[;32m└─[1;34m$[0m ps -aux | grep #([K[K$(a[Kwhoamu[Ki)
+[?2004l[01;31m[Kkartoger[m[K     231  0.0  0.0   7416  4280 pts/0    Ss   20:52   0:00 -bash
+root         232  0.0  0.0   7264  4236 ?        Ss   20:52   0:00 login -- [01;31m[Kkartoger[m[K
+[01;31m[Kkartoger[m[K     247  0.0  0.1  22032 12748 ?        Ss   20:52   0:00 /usr/lib/systemd/systemd --user
+[01;31m[Kkartoger[m[K     249  0.0  0.0  21664  1616 ?        S    20:52   0:00 (sd-pam)
+[01;31m[Kkartoger[m[K     285  0.0  0.0   7176  1792 ?        Ss   20:52   0:00 /usr/bin/mpris-proxy
+[01;31m[Kkartoger[m[K     286  0.0  0.0  93672  7768 ?        Ssl  20:52   0:00 /usr/bin/pipewire
+[01;31m[Kkartoger[m[K     287  0.0  0.0  82008  5092 ?        Ssl  20:52   0:00 /usr/bin/pipewire -c filter-chain.conf
+[01;31m[Kkartoger[m[K     288  0.0  0.1 396240 15624 ?        Ssl  20:52   0:00 /usr/bin/wireplumber
+[01;31m[Kkartoger[m[K     289  0.0  0.0   4332  3660 pts/1    Ss+  20:52   0:00 -bash
+[01;31m[Kkartoger[m[K     290  0.0  0.1  95936  8064 ?        Ssl  20:52   0:00 /usr/bin/pipewire-pulse
+[01;31m[Kkartoger[m[K     298  0.0  0.0   6636  3528 ?        Ss   20:52   0:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+[01;31m[Kkartoger[m[K     381  0.0  0.0   7416  4280 pts/3    Ss   20:53   0:00 -bash
+[01;31m[Kkartoger[m[K     430  0.0  0.0   7428  4212 pts/3    S+   20:59   0:00 nano ps-log.txt
+[01;31m[Kkartoger[m[K     486  0.0  0.0  10328  5248 ?        S    21:05   0:00 top -b
+[01;31m[Kkartoger[m[K     597  0.1  0.0  10328  5276 ?        S    21:19   0:00 top -b -d 1
+[01;31m[Kkartoger[m[K     605  0.0  0.0   5564  1152 pts/0    S+   21:20   0:00 script ps-log.txt
+[01;31m[Kkartoger[m[K     606  0.0  0.0   7408  4168 pts/2    Ss   21:20   0:00 bash -i
+[01;31m[Kkartoger[m[K     610  0.0  0.0   9324  4208 pts/2    R+   21:20   0:00 ps -aux
+[01;31m[Kkartoger[m[K     611  0.0  0.0   6592  2072 pts/2    S+   21:20   0:00 grep --color=auto [01;31m[Kkartoger[m[K
+
+[?2004h]0;kartoger@ROGIRIS: ~/Codeby_Devops[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m~/Codeby_Devops[;32m]
+[;32m└─[1;34m$[0m top -b -d 1&
+[?2004l[1] 613
+
+[?2004h]0;kartoger@ROGIRIS: ~/Codeby_Devops[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m~/Codeby_Devops[;32m]
+[;32m└─[1;34m$[0m top - 21:20:50 up  6:22,  2 users,  load average: 0.00, 0.00, 0.00
+Tasks:  35 total,   1 running,  34 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.5 sy,  0.0 ni, 99.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7752.4 total,   7127.7 free,    641.3 used,    215.0 buff/cache     
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   7111.0 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   22756  13840  10500 S   0.0   0.2   0:00.30 systemd
+      2 root      20   0    2776   1920   1796 S   0.0   0.0   0:00.00 init-systemd(ka
+      6 root      20   0    2776      4      0 S   0.0   0.0   0:00.00 init
+     32 root      20   0    8368   7048   1804 S   0.0   0.1   0:00.23 haveged
+     37 root      20   0   50280  16844  15728 S   0.0   0.2   0:00.08 systemd-journal
+     48 root      20   0   32728  10504   7812 S   0.0   0.1   0:00.17 systemd-udevd
+    131 root      20   0    4268   2568   2320 S   0.0   0.0   0:00.01 cron
+    134 message+  20   0    7180   4440   3752 S   0.0   0.1   0:00.04 dbus-daemon
+    173 polkitd   20   0  381540  11112   6964 S   0.0   0.1   0:00.11 polkitd
+    180 root      20   0   17932   8384   7352 S   0.0   0.1   0:00.05 systemd-logind
+    201 root      20   0    5156   1616   1448 S   0.0   0.0   0:00.00 agetty
+    202 root      20   0    5112   1600   1428 S   0.0   0.0   0:00.00 agetty
+    229 root      20   0    2780    204     80 S   0.0   0.0   0:00.00 SessionLeader
+    230 root      20   0    2780    208     80 S   0.0   0.0   0:01.78 Relay(231)
+    231 kartoger  20   0    7416   4280   3496 S   0.0   0.1   0:00.02 bash
+    232 root      20   0    7264   4236   3664 S   0.0   0.1   0:00.00 login
+    247 kartoger  20   0   22032  12748  10016 S   0.0   0.2   0:00.05 systemd
+    249 kartoger  20   0   21664   1616      0 S   0.0   0.0   0:00.00 (sd-pam)
+    285 kartoger  20   0    7176   1792   1572 S   0.0   0.0   0:00.00 mpris-proxy
+    286 kartoger  20   0   93672   7768   6288 S   0.0   0.1   0:00.02 pipewire
+    287 kartoger  20   0   82008   5092   4504 S   0.0   0.1   0:00.02 pipewire
+    288 kartoger  20   0  396240  15624  10708 S   0.0   0.2   0:00.05 wireplumber
+    289 kartoger  20   0    4332   3660   3132 S   0.0   0.0   0:00.00 bash
+    290 kartoger  20   0   95936   8064   7124 S   0.0   0.1   0:00.02 pipewire-pulse
+    298 kartoger  20   0    6636   3528   3228 S   0.0   0.0   0:00.00 dbus-daemon
+    308 rtkit     21   1   21428   1628   1440 S   0.0   0.0   0:00.05 rtkit-daemon
+    374 root      20   0    2780    208     80 S   0.0   0.0   0:00.00 SessionLeader
+    375 root      20   0    2780    212     80 S   0.0   0.0   0:00.15 Relay(381)
+    381 kartoger  20   0    7416   4280   3492 S   0.0   0.1   0:00.02 bash
+    430 kartoger  20   0    7428   4212   2952 S   0.0   0.1   0:00.01 nano
+    486 kartoger  20   0   10328   5248   3180 S   0.0   0.1   0:00.40 top
+    597 kartoger  20   0   10328   5276   3212 S   0.0   0.1   0:00.12 top
+    605 kartoger  20   0    5564   1152   1064 S   0.0   0.0   0:00.01 script
+    606 kartoger  20   0    7408   4168   3412 S   0.0   0.1   0:00.01 bash
+    613 kartoger  20   0   10328   5232   3168 R   0.0   0.1   0:00.00 top
+
+top - 21:20:51 up  6:22,  2 users,  load average: 0.00, 0.00, 0.00
+Tasks:  35 total,   1 running,  34 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7752.4 total,   7127.7 free,    641.3 used,    215.0 buff/cache     
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   7111.0 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   22756  13840  10500 S   0.0   0.2   0:00.30 systemd
+      2 root      20   0    2776   1920   1796 S   0.0   0.0   0:00.00 init-systemd(ka
+      6 root      20   0    2776      4      0 S   0.0   0.0   0:00.00 init
+     32 root      20   0    8368   7048   1804 S   0.0   0.1   0:00.23 haveged
+     37 root      20   0   50280  16844  15728 S   0.0   0.2   0:00.08 systemd-journal
+     48 root      20   0   32728  10504   7812 S   0.0   0.1   0:00.17 systemd-udevd
+    131 root      20   0    4268   2568   2320 S   0.0   0.0   0:00.01 cron
+    134 message+  20   0    7180   4440   3752 S   0.0   0.1   0:00.04 dbus-daemon
+    173 polkitd   20   0  381540  11112   6964 S   0.0   0.1   0:00.11 polkitd
+    180 root      20   0   17932   8384   7352 S   0.0   0.1   0:00.05 systemd-logind
+    201 root      20   0    5156   1616   1448 S   0.0   0.0   0:00.00 agetty
+    202 root      20   0    5112   1600   1428 S   0.0   0.0   0:00.00 agetty
+    229 root      20   0    2780    204     80 S   0.0   0.0   0:00.00 SessionLeader
+    230 root      20   0    2780    208     80 S   0.0   0.0   0:01.78 Relay(231)
+    231 kartoger  20   0    7416   4280   3496 S   0.0   0.1   0:00.02 bash
+    232 root      20   0    7264   4236   3664 S   0.0   0.1   0:00.00 login
+    247 kartoger  20   0   22032  12748  10016 S   0.0   0.2   0:00.05 systemd
+    249 kartoger  20   0   21664   1616      0 S   0.0   0.0   0:00.00 (sd-pam)
+    285 kartoger  20   0    7176   1792   1572 S   0.0   0.0   0:00.00 mpris-proxy
+    286 kartoger  20   0   93672   7768   6288 S   0.0   0.1   0:00.02 pipewire
+    287 kartoger  20   0   82008   5092   4504 S   0.0   0.1   0:00.02 pipewire
+    288 kartoger  20   0  396240  15624  10708 S   0.0   0.2   0:00.05 wireplumber
+    289 kartoger  20   0    4332   3660   3132 S   0.0   0.0   0:00.00 bash
+    290 kartoger  20   0   95936   8064   7124 S   0.0   0.1   0:00.02 pipewire-pulse
+    298 kartoger  20   0    6636   3528   3228 S   0.0   0.0   0:00.00 dbus-daemon
+    308 rtkit     21   1   21428   1628   1440 S   0.0   0.0   0:00.05 rtkit-daemon
+    374 root      20   0    2780    208     80 S   0.0   0.0   0:00.00 SessionLeader
+    375 root      20   0    2780    212     80 S   0.0   0.0   0:00.15 Relay(381)
+    381 kartoger  20   0    7416   4280   3492 S   0.0   0.1   0:00.02 bash
+    430 kartoger  20   0    7428   4212   2952 S   0.0   0.1   0:00.01 nano
+    486 kartoger  20   0   10328   5248   3180 S   0.0   0.1   0:00.40 top
+    597 kartoger  20   0   10328   5276   3212 S   0.0   0.1   0:00.12 top
+    605 kartoger  20   0    5564   1152   1064 S   0.0   0.0   0:00.01 script
+    606 kartoger  20   0    7408   4168   3412 S   0.0   0.1   0:00.01 bash
+    613 kartoger  20   0   10328   5232   3168 R   0.0   0.1   0:00.00 top
+
+top - 21:20:52 up  6:22,  2 users,  load average: 0.00, 0.00, 0.00
+Tasks:  35 total,   1 running,  34 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7752.4 total,   7127.7 free,    641.3 used,    215.0 buff/cache     
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   7111.0 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    486 kartoger  20   0   10328   5248   3180 S   1.0   0.1   0:00.41 top
+      1 root      20   0   22756  13840  10500 S   0.0   0.2   0:00.30 systemd
+      2 root      20   0    2776   1920   1796 S   0.0   0.0   0:00.00 init-systemd(ka
+      6 root      20   0    2776      4      0 S   0.0   0.0   0:00.00 init
+     32 root      20   0    8368   7048   1804 S   0.0   0.1   0:00.23 haveged
+     37 root      20   0   50280  16844  15728 S   0.0   0.2   0:00.08 systemd-journal
+     48 root      20   0   32728  10504   7812 S   0.0   0.1   0:00.17 systemd-udevd
+    131 root      20   0    4268   2568   2320 S   0.0   0.0   0:00.01 cron
+    134 message+  20   0    7180   4440   3752 S   0.0   0.1   0:00.04 dbus-daemon
+    173 polkitd   20   0  381540  11112   6964 S   0.0   0.1   0:00.11 polkitd
+    180 root      20   0   17932   8384   7352 S   0.0   0.1   0:00.05 systemd-logind
+    201 root      20   0    5156   1616   1448 S   0.0   0.0   0:00.00 agetty
+    202 root      20   0    5112   1600   1428 S   0.0   0.0   0:00.00 agetty
+    229 root      20   0    2780    204     80 S   0.0   0.0   0:00.00 SessionLeader
+    230 root      20   0    2780    208     80 S   0.0   0.0   0:01.78 Relay(231)
+    231 kartoger  20   0    7416   4280   3496 S   0.0   0.1   0:00.02 bash
+    232 root      20   0    7264   4236   3664 S   0.0   0.1   0:00.00 login
+    247 kartoger  20   0   22032  12748  10016 S   0.0   0.2   0:00.05 systemd
+    249 kartoger  20   0   21664   1616      0 S   0.0   0.0   0:00.00 (sd-pam)
+    285 kartoger  20   0    7176   1792   1572 S   0.0   0.0   0:00.00 mpris-proxy
+    286 kartoger  20   0   93672   7768   6288 S   0.0   0.1   0:00.02 pipewire
+    287 kartoger  20   0   82008   5092   4504 S   0.0   0.1   0:00.02 pipewire
+    288 kartoger  20   0  396240  15624  10708 S   0.0   0.2   0:00.05 wireplumber
+    289 kartoger  20   0    4332   3660   3132 S   0.0   0.0   0:00.00 bash
+    290 kartoger  20   0   95936   8064   7124 S   0.0   0.1   0:00.02 pipewire-pulse
+    298 kartoger  20   0    6636   3528   3228 S   0.0   0.0   0:00.00 dbus-daemon
+    308 rtkit     21   1   21428   1628   1440 S   0.0   0.0   0:00.05 rtkit-daemon
+    374 root      20   0    2780    208     80 S   0.0   0.0   0:00.00 SessionLeader
+    375 root      20   0    2780    212     80 S   0.0   0.0   0:00.15 Relay(381)
+    381 kartoger  20   0    7416   4280   3492 S   0.0   0.1   0:00.02 bash
+    430 kartoger  20   0    7428   4212   2952 S   0.0   0.1   0:00.01 nano
+    597 kartoger  20   0   10328   5276   3212 S   0.0   0.1   0:00.12 top
+    605 kartoger  20   0    5564   1152   1064 S   0.0   0.0   0:00.01 script
+    606 kartoger  20   0    7408   4168   3412 S   0.0   0.1   0:00.01 bash
+    613 kartoger  20   0   10328   5232   3168 R   0.0   0.1   0:00.00 topkill 
+
+top - 21:20:53 up  6:22,  2 users,  load average: 0.00, 0.00, 0.00
+Tasks:  35 total,   1 running,  34 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7752.4 total,   7127.7 free,    641.3 used,    215.0 buff/cache     
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   7111.0 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   22756  13840  10500 S   0.0   0.2   0:00.30 systemd
+      2 root      20   0    2776   1920   1796 S   0.0   0.0   0:00.00 init-systemd(ka
+      6 root      20   0    2776      4      0 S   0.0   0.0   0:00.00 init
+     32 root      20   0    8368   7048   1804 S   0.0   0.1   0:00.23 haveged
+     37 root      20   0   50280  16844  15728 S   0.0   0.2   0:00.08 systemd-journal
+     48 root      20   0   32728  10504   7812 S   0.0   0.1   0:00.17 systemd-udevd
+    131 root      20   0    4268   2568   2320 S   0.0   0.0   0:00.01 cron
+    134 message+  20   0    7180   4440   3752 S   0.0   0.1   0:00.04 dbus-daemon
+    173 polkitd   20   0  381540  11112   6964 S   0.0   0.1   0:00.11 polkitd
+    180 root      20   0   17932   8384   7352 S   0.0   0.1   0:00.05 systemd-logind
+    201 root      20   0    5156   1616   1448 S   0.0   0.0   0:00.00 agetty
+    202 root      20   0    5112   1600   1428 S   0.0   0.0   0:00.00 agetty
+    229 root      20   0    2780    204     80 S   0.0   0.0   0:00.00 SessionLeader
+    230 root      20   0    2780    208     80 S   0.0   0.0   0:01.78 Relay(231)
+    231 kartoger  20   0    7416   4280   3496 S   0.0   0.1   0:00.02 bash
+    232 root      20   0    7264   4236   3664 S   0.0   0.1   0:00.00 login
+    247 kartoger  20   0   22032  12748  10016 S   0.0   0.2   0:00.05 systemd
+    249 kartoger  20   0   21664   1616      0 S   0.0   0.0   0:00.00 (sd-pam)
+    285 kartoger  20   0    7176   1792   1572 S   0.0   0.0   0:00.00 mpris-proxy
+    286 kartoger  20   0   93672   7768   6288 S   0.0   0.1   0:00.02 pipewire
+    287 kartoger  20   0   82008   5092   4504 S   0.0   0.1   0:00.02 pipewire
+    288 kartoger  20   0  396240  15624  10708 S   0.0   0.2   0:00.05 wireplumber
+    289 kartoger  20   0    4332   3660   3132 S   0.0   0.0   0:00.00 bash
+    290 kartoger  20   0   95936   8064   7124 S   0.0   0.1   0:00.02 pipewire-pulse
+    298 kartoger  20   0    6636   3528   3228 S   0.0   0.0   0:00.00 dbus-daemon
+    308 rtkit     21   1   21428   1628   1440 S   0.0   0.0   0:00.05 rtkit-daemon
+    374 root      20   0    2780    208     80 S   0.0   0.0   0:00.00 SessionLeader
+    375 root      20   0    2780    212     80 S   0.0   0.0   0:00.15 Relay(381)
+    381 kartoger  20   0    7416   4280   3492 S   0.0   0.1   0:00.02 bash
+    430 kartoger  20   0    7428   4212   2952 S   0.0   0.1   0:00.01 nano
+    486 kartoger  20   0   10328   5248   3180 S   0.0   0.1   0:00.41 top
+    597 kartoger  20   0   10328   5276   3212 S   0.0   0.1   0:00.12 top
+    605 kartoger  20   0    5564   1152   1064 S   0.0   0.0   0:00.01 script
+    606 kartoger  20   0    7408   4168   3412 S   0.0   0.1   0:00.01 bash
+    613 kartoger  20   0   10328   5232   3168 R   0.0   0.1   0:00.00 top613
+[?2004l
+[?2004h]0;kartoger@ROGIRIS: ~/Codeby_Devops[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m~/Codeby_Devops[;32m]
+[;32m└─[1;34m$[0m 
+kill 613[C[C[C[C[Kkill 613[C[C[C[C[Kexit
+[?2004lexit
+
+Script done on 2025-04-05 21:21:05+05:00 [COMMAND_EXIT_CODE="0"]

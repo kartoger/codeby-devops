@@ -1,0 +1,220 @@
+Script started on 2025-04-05 22:33:55+05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004h]0;kartoger@ROGIRIS: /mnt/c/Users/user[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/mnt/c/Users/user[;32m]
+[;32m└─[1;34m$[0m aptr[K[K[K[Ksudo apt install nginx
+[?2004l[sudo] password for kartoger: 
+Reading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                Installing:
+[32m  nginx
+[0m
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 0
+  Download size: 609 kB
+  Space needed: 1,587 kB / 1,021 GB available
+
+[33m0% [Working][0m[33m0% [Working][0m[33m0% [Waiting for headers][0m                        Get:1 http://kali.download/kali kali-last-snapshot/main amd64 nginx amd64 1.26.3-2 [609 kB]
+[33m8% [1 nginx 63.9 kB/609 kB 10%][0m[33m41% [1 nginx 315 kB/609 kB 52%][0m[33m                               100% [Working][0m              Fetched 609 kB in 2s (369 kB/s)
+
+7[0;29r8[1ASelecting previously unselected package nginx.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 148818 files and directories currently installed.)
+Preparing to unpack .../nginx_1.26.3-2_amd64.deb ...
+7[30;0f[42m[30mProgress: [  0%][49m[39m [                                                                                                  ] 87[30;0f[42m[30mProgress: [ 20%][49m[39m [███████████████████▌                                                                              ] 8Unpacking nginx (1.26.3-2) ...
+7[30;0f[42m[30mProgress: [ 40%][49m[39m [███████████████████████████████████████▏                                                          ] 8Setting up nginx (1.26.3-2) ...
+7[30;0f[42m[30mProgress: [ 60%][49m[39m [██████████████████████████████████████████████████████████▊                                       ] 87[30;0f[42m[30mProgress: [ 80%][49m[39m [██████████████████████████████████████████████████████████████████████████████▍                   ] 8Processing triggers for kali-menu (2025.1.1) ...
+Processing triggers for man-db (2.13.0-1) ...
+
+7[0;30r8[1A[J
+[?2004h]0;kartoger@ROGIRIS: /mnt/c/Users/user[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/mnt/c/Users/user[;32m]
+[;32m└─[1;34m$[0m yst[K[K[Ksyste[Kemctl nginx s[C[1@s[1@t[1@a[1@t[1@u[1@s[C[1@ [C[C[C[C[C[C[C[K[K
+[?2004l[?1h=○ nginx.service - A high performance web server and a reverse proxy server[m
+     Loaded: loaded (]8;;file://ROGIRIS/usr/lib/systemd/system/nginx.service\/usr/lib/systemd/system/nginx.service]8;;\; [0;1;38:5:185mdisabled[0m; preset: [0;1;38:5:185mdisabled[0m)[m]8;;\
+     Active: inactive (dead)[m
+       Docs: ]8;;man:nginx(8)\man:nginx(8)]8;;\[m]8;;\
+[K[?1l>
+[?2004h]0;kartoger@ROGIRIS: /mnt/c/Users/user[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/mnt/c/Users/user[;32m]
+[;32m└─[1;34m$[0m systemctl status nginx[C[1@s[1P[C[1@s[1@t[1@t[1P[1P[1P[1@t[1P[C[1@s[1@u[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcd /etc/syse[Ktemd/
+journald.conf  network/       pstore.conf    system/        user/          
+logind.conf    networkd.conf  sleep.conf     system.conf    user.conf      
+]0;kartoger@ROGIRIS: /mnt/c/Users/user[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/mnt/c/Users/user[;32m]
+[;32m└─[1;34m$[0m cd /etc/systemd/st[Kystem/ngin[K[K[K[KMyNginxService[C[1Perviceservice/ervice[1Pervice.ervice[1P.ervice[C[Csrvice[1Prviceservice_Nginx.service-Nginx.service[1PNginx.service[1PNginx.service-Nginx.service[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pginx.servicenginx.service[C[1Py-nginx.servicemy-nginx.service[Cy-nginx.service[1P-nginx.service[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CDD[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+[?2004l
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m ls
+[?2004l[0m[01;36mdbus-org.freedesktop.ModemManager1.service[0m  [01;34mnetwork-online.target.wants[0m     [01;36msystemd-tmpfiles-clean.timer[0m
+[01;36mdisplay-manager.service[0m                     [01;34msockets.target.wants[0m            [01;36msystemd-tmpfiles-setup-dev-early.service[0m
+[01;34mgetty.target.wants[0m                          [01;34msysinit.target.wants[0m            [01;36msystemd-tmpfiles-setup-dev.service[0m
+[01;34mgraphical.target.wants[0m                      [01;36msystemd-networkd.service[0m        [01;36msystemd-tmpfiles-setup.service[0m
+[01;34mmulti-user.target.wants[0m                     [01;36msystemd-resolved.service[0m        [01;34mtimers.target.wants[0m
+[01;36mNetworkManager.service[0m                      [01;36msystemd-tmpfiles-clean.service[0m  [01;36mtmp.mount[0m
+
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m babo[K[K[K[Knano Mys[KN[Kng[K[K_ngn[Kinx.service
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;44H(B[0;1m[37m[41m[ Directory '.' is not writable ][39;49m(B[m[H(B[0;7m  GNU nano 8.3                                        My_nginx.service                                                  [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^F(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d[?12l[?25h[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m sudo[K[K[K[Knano My_nginx.service[C[C[C[C[1@s[1@u[1@d[1@o[1@ 
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;55H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 8.3                                        My_nginx.service                                                  [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^F(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d[?12l[?25h[?25l[28d[K[1;72H(B[0;7m*[119G(B[m[2d(B[0;1m[32m[Unit][3d[39m(B[mDescription=My Nginx web server[4dAfter=network.target[6d(B[0;1m[32m[Service][7d[39m(B[mType=forking[8dExecStart=/usr/sbin/nginx[9dExecReload=/usr/sbin/nginx -s reload[10dExecStop=/usr/sbin/nginx -s stop[11dPIDFile=/var/run/nginx.pid[12dUser=www-data[13dGroup=www-data[14dRestart=on-failure[16d(B[0;1m[32m[Install][17d[39m(B[mWantedBy=multi-user.target[?12l[?25h[?25l[?12l[?25h[18d[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[17;27H[?25l[?12l[?25h[16;10H[?25l[?12l[?25h[A[?25l[?12l[?25h[14;19H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[11;27H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[7;13H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[4;21H[?25l[?12l[?25h[3;27H[?25l[?12l[?25h[4;21H[?25l[?12l[?25h[5d[?25l[?12l[?25h[4;21H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[7d[?25l[?12l[?25hT[?25l[?12l[?25h[A[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[AA[?25l[?12l[?25h[A[?25l[?12l[?25h[?25l[?12l[?25h[2;7H[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[3;32H[?25l[?12l[?25h [?25l[?12l[?25h:[?25l[?12l[?25h)[?25l[?12l[?25h[?25l[?12l[?25h)[?25l[?12l[?25h[?25l[?12l[?25h)[K[?25l[?12l[?25h;)[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25hn[?25l[?12l[?25hx[?25l[?12l[?25h [?25l[?12l[?25hw[?25l[?12l[?25he[?25l[?12l[?25hb[?25l[?12l[?25h [?25l[?12l[?25hs[?25l[?12l[?25he[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25hb[?25l[?12l[?25h [?25l[?12l[?25hs[?25l[?12l[?25he[?25l[?12l[?25hr[?25l[?12l[?25hv[?25l[?12l[?25he[?25l[?12l[?25hr[?25l[?12l[?25h [?25l[?12l[?25h;[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h ;)[K[?25l[?12l[?25h ;)[K[?25l[?12l[?25h ;)[K[?25l[?12l[?25h ;)[K[?25l[?12l[?25h ;)[K[?25l[?12l[?25h ;)[K[?25l[?12l[?25h ;)[K[?25l[?12l[?25h ;)[K[?25l[?12l[?25h ;)[K[?25l[?12l[?25h ;)[K[?25l[?12l[?25h ;)[K[?25l[?12l[?25h  ;)[?25l[?12l[?25hs ;)[?25l[?12l[?25he ;)[?25l[?12l[?25hr ;)[?25l[?12l[?25hv ;)[?25l[?12l[?25hi ;)[?25l[?12l[?25hc ;)[?25l[?12l[?25he ;)[?25l[?12l[?25h[4;21H[?25l[?12l[?25h[5d[?25l[?12l[?25h[6;10H[?25l[?12l[?25h[7;13H[?25l[?12l[?25h[8;26H[?25l[?12l[?25h[9;29H[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12;14H[?25l[?12l[?25h[13da[?25l[?12l[?25h[14;19H[?25l[?12l[?25h[A[?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h[K[?25l[13;28r[28;1H
+[1;30r[12;14H[?12l[?25h[?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h[K[?25l[12;28r[28;1H
+[1;30r[11;27H[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[7;13H[?25l[?12l[?25h[8;26H[?25l[?12l[?25h[9dx[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12;19H[?25l[?12l[?25h[13d[?25l[?12l[?25h[14;10H[?25l[?12l[?25h[15;27H[?25l[?12l[?25h[16d[?25l[?12l[?25h[15;27H[?25l[?12l[?25h[14;10H[?25l[28;54H(B[0;7m[ Writing... ](B[m[1;72H(B[0;7m [119G(B[m[28;52H(B[0;7m[ Wrote 14 lines ](B[m[?12l[?25h[14;10H[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m cat My_nginx.service 
+[?2004l[Unit]
+Description=My Nginx service ;)
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/nginx
+ExecReload=/usr/sbin/nginx -s reload
+ExecStop=/usr/sbin/nginx -s stop
+PIDFile=/var/run/nginx.pid
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m sudi[Ko systm[Kecmt[K[K[Kmctl daemon-reload
+[?2004l
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m sudo systemctl daemon-reload[K[K[K[K[K[K[K[K[K[K[K[K[Kstatus ngn[K[K[K,y[K[Km[K<y[K[KMy-[K_nginx.service 
+[?2004l[?1h=○ My_nginx.service - My Nginx service ;)[m
+     Loaded: loaded (]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\; [0;1;38:5:185mdisabled[0m; preset: [0;1;38:5:185mdisabled[0m)[m]8;;\
+     Active: inactive (dead)[m
+[m
+Apr 05 22:37:52 ROGIRIS systemd[1]: [0;1;39m[0;1;31m[0;1;39m]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\:10: PIDFile= references a path below legacy di[m]8;;\[7m>[27m
+[7mlines 1-5/5 (END)[27m[K[K[K[7mlines 1-5/5 (END)[27m[K[K[K[7mlines 1-5/5 (END)[27m[K[K[K[7mlines 1-5/5 (END)[27m[K[K[K[7mlines 1-5/5 (END)[27m[K[K[K[7mlines 1-5/5 (END)[27m[K[K[K[7mlines 1-5/5 (END)[27m[K[K[K[7mlines 1-5/5 (END)[27m[K[K...skipping...
+○ My_nginx.service - My Nginx service ;)[m
+     Loaded: loaded (]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\; [0;1;38:5:185mdisabled[0m; preset: [0;1;38:5:185mdisabled[0m)[m]8;;\
+     Active: inactive (dead)[m
+[m
+Apr 05 22:37:52 ROGIRIS systemd[1]: [0;1;39m[0;1;31m[0;1;39m]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\:10: PIDFile= references a path below legacy di[m]8;;\[7m>[27m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7mlines 1-5/5 (END)[27m[K[K[7mlines 1-5/5 (END)[27m[K[K[K[7mlines 1-5/5 (END)[27m[K[K[K[7mlines 1-5/5 (END)[27m[K[K[?1l>
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m sudo systemctl status My_nginx.service 
+[?2004l[?1h=○ My_nginx.service - My Nginx service ;)[m
+     Loaded: loaded (]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\; [0;1;38:5:185mdisabled[0m; preset: [0;1;38:5:185mdisabled[0m)[m]8;;\
+     Active: inactive (dead)[m
+[m
+Apr 05 22:37:52 ROGIRIS systemd[1]: [0;1;39m[0;1;31m[0;1;39m]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\:10: PIDFile= references a path below legacy di[m]8;;\[7m>[27m
+Apr 05 22:38:00 ROGIRIS systemd[1]: [0;1;39m[0;1;31m[0;1;39m]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\:10: PIDFile= references a path below legacy di[m]8;;\[7m>[27m
+[7mlines 1-6/6 (END)[27m[K[K[K[7mlines 1-6/6 (END)[27m[K[K[K[7mlines 1-6/6 (END)[27m[K[K[?1l>
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m sudo systemctl status My_nginx.service [1P[1P[1P[1P[1P[1P[1@e[1@b[1@a[1P[1P[1@n[1@a[1@b[1@l[1@e
+[?2004lCreated symlink '/etc/systemd/system/multi-user.target.wants/My_nginx.service' → '/etc/systemd/system/My_nginx.service'.
+
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m sudo systemctl enable My_nginx.service [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatus[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?1h=○ My_nginx.service - My Nginx service ;)[m
+     Loaded: loaded (]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\; [0;1;32menabled[0m; preset: [0;1;38:5:185mdisabled[0m)[m]8;;\
+     Active: inactive (dead)[m
+[m
+Apr 05 22:37:52 ROGIRIS systemd[1]: [0;1;39m[0;1;31m[0;1;39m]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\:10: PIDFile= references a path below legacy di[m]8;;\[7m>[27m
+Apr 05 22:38:00 ROGIRIS systemd[1]: [0;1;39m[0;1;31m[0;1;39m]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\:10: PIDFile= references a path below legacy di[m]8;;\[7m>[27m
+Apr 05 22:38:13 ROGIRIS systemd[1]: [0;1;39m[0;1;31m[0;1;39m]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\:10: PIDFile= references a path below legacy di[m]8;;\[7m>[27m
+[7mlines 1-7/7 (END)[27m[K[K[?1l>
+
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m sudo systemctl status My_nginx.service [1P[1P[1P[1@r[1@t
+[?2004l
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m ls
+[?2004l[0m[01;36mdbus-org.freedesktop.ModemManager1.service[0m  [01;34mnetwork-online.target.wants[0m     [01;36msystemd-tmpfiles-setup-dev-early.service[0m
+[01;36mdisplay-manager.service[0m                     [01;34msockets.target.wants[0m            [01;36msystemd-tmpfiles-setup-dev.service[0m
+[01;34mgetty.target.wants[0m                          [01;34msysinit.target.wants[0m            [01;36msystemd-tmpfiles-setup.service[0m
+[01;34mgraphical.target.wants[0m                      [01;36msystemd-networkd.service[0m        [01;34mtimers.target.wants[0m
+[01;34mmulti-user.target.wants[0m                     [01;36msystemd-resolved.service[0m        [01;36mtmp.mount[0m
+My_nginx.service                            [01;36msystemd-tmpfiles-clean.service[0m
+[01;36mNetworkManager.service[0m                      [01;36msystemd-tmpfiles-clean.timer[0m
+
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m lssudo systemctl start My_nginx.service [1@tus[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?1h=[0;1;32m●[0m My_nginx.service - My Nginx service ;)[m
+     Loaded: loaded (]8;;file://ROGIRIS/etc/systemd/system/My_nginx.service\/etc/systemd/system/My_nginx.service]8;;\; [0;1;32menabled[0m; preset: [0;1;38:5:185mdisabled[0m)[m]8;;\
+     Active: [0;1;32mactive (running)[0m since Sat 2025-04-05 22:38:21 +05; 4s ago[m
+ Invocation: 2dcc6813315647ab9abfe98ea03b6f09[m
+    Process: 548 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)[m
+   Main PID: 549 (nginx)[m
+      Tasks: 21[0;38;5;245m (limit: 9294)[0m[m
+     Memory: 13.9M[m
+     CGroup: /system.slice/My_nginx.service[m
+             ├─[0;38;5;245m549 "nginx: master process /usr/sbin/nginx"[0m[m
+             ├─[0;38;5;245m550 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m551 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m552 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m553 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m554 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m555 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m556 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m558 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m559 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m560 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m561 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m562 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m563 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m564 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m565 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m566 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m567 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m568 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m569 "nginx: worker process"[0m[m
+[7mlines 1-29[27m[K[K             └─[0;38;5;245m570 "nginx: worker process"[0m[m
+[m
+Apr 05 22:38:21 ROGIRIS systemd[1]: Starting My_nginx.service - My Nginx service ;)...[m
+Apr 05 22:38:21 ROGIRIS systemd[1]: Started My_nginx.service - My Nginx service ;).[m
+[7mlines 5-33/33 (END)[27m[K[K[K[7mlines 5-33/33 (END)[27m[K[K[?1l>
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m curl http://localhost:80
+[?2004l<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+
+[?2004h]0;kartoger@ROGIRIS: /etc/systemd/system[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m/etc/systemd/system[;32m]
+[;32m└─[1;34m$[0m exit[K[K[K[Kcd ~
+[?2004l
+[?2004h]0;kartoger@ROGIRIS: ~[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m~[;32m]
+[;32m└─[1;34m$[0m exit
+[?2004lexit
+
+Script done on 2025-04-05 22:38:54+05:00 [COMMAND_EXIT_CODE="0"]
