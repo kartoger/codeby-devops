@@ -1,0 +1,32 @@
+Script started on 2025-04-05 22:05:51+05:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="155" LINES="37"]
+[?2004h]0;kartoger@ROGIRIS: ~/Codeby_Devops[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m~/Codeby_Devops[;32m]
+[;32m└─[1;34m$[0m nano ps-log.txt [C[C[C[Ccd Codeby_Devops/[C[C[C[C[C[C[C~[Kexitscript ps-log.txt[C[C[C[C[3Prm ps-log.txt [C[C[C[C[2@nano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kscript ps-log.txt[C[C[C[Cclear[K[3Plscd Codeby_Devops/[C[C[C[Cls[Kcd ~[2Plsclearps -eFH[C[C[C[C[4Ptop[K[K[Kjava --version
+[?2004lopenjdk 25-ea 2025-09-16
+OpenJDK Runtime Environment (build 25-ea+8-Debian-1)
+OpenJDK 64-Bit Server VM (build 25-ea+8-Debian-1, mixed mode, sharing)
+
+[?2004h]0;kartoger@ROGIRIS: ~/Codeby_Devops[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m~/Codeby_Devops[;32m]
+[;32m└─[1;34m$[0m java --version[C[C[C[Cnano ps-log.txt [C[C[C[Ccd Codeby_Devops/[C[C[C[C[C[C[C~[Kexitscript ps-log.txt[C[C[C[C[3Prm ps-log.txt [C[C[C[C[2@nano[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kscript ps-log.txt[C[C[C[Cclear[K[3Plscd Codeby_Devops/[C[C[C[Cls[Kcd ~[2Plsclearps -eFH[C[C[C[C[4Ptopexitkill 613[C[C[C[Ctop -b -d 1&[C[C[C[Cps -aux | grep $(whoami)[C[C[C[C[12Ptop -b -d 1&[K[K[K[K[K[K[K[K[K[K[K[Ksudo update-alet[K[Kten[Krnatives --install[K[K[K[K[K[K[Kconfig java
+[?2004l[sudo] password for kartoger: 
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                         Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-25-openjdk-amd64/bin/java   2500      auto mode
+* 1            /usr/lib/jvm/java-25-openjdk-amd64/bin/java   2500      manual mode
+  2            /usr/lib/jvm/jdk-24/bin/java                  2400      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 2
+update-alternatives: using /usr/lib/jvm/jdk-24/bin/java to provide /usr/bin/java (java) in manual mode
+
+[?2004h]0;kartoger@ROGIRIS: ~/Codeby_Devops[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m~/Codeby_Devops[;32m]
+[;32m└─[1;34m$[0m sudo update-alternatives --config java[C[C[C[C[24Pjava --version
+[?2004ljava 24 2025-03-18
+Java(TM) SE Runtime Environment (build 24+36-3646)
+Java HotSpot(TM) 64-Bit Server VM (build 24+36-3646, mixed mode, sharing)
+
+[?2004h]0;kartoger@ROGIRIS: ~/Codeby_Devops[;32m┌──([1;34mkartoger㉿ROGIRIS[;32m)-[[0;1m~/Codeby_Devops[;32m]
+[;32m└─[1;34m$[0m exit
+[?2004lexit
+
+Script done on 2025-04-05 22:06:51+05:00 [COMMAND_EXIT_CODE="0"]
