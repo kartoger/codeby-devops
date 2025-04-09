@@ -1,0 +1,8 @@
+0.0.0.0/1 via 33.33.33.5 dev tun0
+default via 33.33.33.5 dev tun0
+default via 192.168.101.1 dev enp0s3 proto dhcp src 192.168.101.11 metric 100
+33.33.33.1 via 33.33.33.5 dev tun0
+33.33.33.5 dev tun0 proto kernel scope link src 33.33.33.6
+128.0.0.0/1 via 33.33.33.5 dev tun0
+192.168.101.0/24 dev enp0s3 proto kernel scope link src 192.168.101.11 metric 100
+192.168.101.10 via 192.168.101.1 dev enp0s3
