@@ -1,0 +1,867 @@
+Script started on 2025-04-15 16:10:51+05:00 [TERM="xterm" TTY="/dev/pts/2" COLUMNS="106" LINES="52"]
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ exitsudo apt install lxd -y
+[?2004l[sudo] password for kartoger: 
+Reading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                Package lxd is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+[1;31mError: [0m[1mPackage 'lxd' has no installation candidate[0m
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ sudo apt install lxd -yexit[Ksudo apt install lxd -ydpkg --configure -a[4Papt install lxdexit[Kscript lesson6.log[8Pgit statusls[Kcd lesson6l[Kcd CodebyDevops/[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksudo san[K[Knap install lsx[K[Kxd
+[?2004lsnap "lxd" is already installed, see 'snap help refresh'
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ sudo snap install lxdapt install lxd -yexit[Ksudo apt install lxd -y[2Psnap install lxd[Ksudo [K[K[K[K[Ksudo lxd init
+[?2004lWould you like to use LXD clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (ceph, dir, lvm, powerflex, zfs, btrfs) [default=zfs]: 
+Create a new ZFS pool? (yes/no) [default=yes]: 
+Would you like to use an existing empty block device (e.g. a disk or partition)? (yes/no) [default=no]: 
+Size in GiB of the new loop device (1GiB minimum) [default=5GiB]: 
+Would you like to connect to a MAAS server? (yes/no) [default=no]: 
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=lxdbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+Would you like the LXD server to be available over the network? (yes/no) [default=no]: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes]: no
+Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]: yes
+config:
+  images.auto_update_interval: "0"
+networks:
+- config:
+    ipv4.address: auto
+    ipv6.address: auto
+  description: ""
+  name: lxdbr0
+  type: ""
+  project: default
+storage_pools:
+- config:
+    size: 5GiB
+  description: ""
+  name: default
+  driver: zfs
+storage_volumes: []
+profiles:
+- config: {}
+  description: ""
+  devices:
+    eth0:
+      name: eth0
+      network: lxdbr0
+      type: nic
+    root:
+      path: /
+      pool: default
+      type: disk
+  name: default
+projects: []
+cluster: null
+
+
+config:
+  images.auto_update_interval: "0"
+networks:
+- config:
+    ipv4.address: auto
+    ipv6.address: auto
+  description: ""
+  name: lxdbr0
+  type: ""
+  project: default
+storage_pools:
+- config:
+    size: 5GiB
+  description: ""
+  name: default
+  driver: zfs
+storage_volumes: []
+profiles:
+- config: {}
+  description: ""
+  devices:
+    eth0:
+      name: eth0
+      network: lxdbr0
+      type: nic
+    root:
+      path: /
+      pool: default
+      type: disk
+  name: default
+projects: []
+cluster: null
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ ip ad
+[?2004l1: [36mlo: [0m<LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback [33m00:00:00:00:00:00[0m brd [33m00:00:00:00:00:00[0m
+    inet [35m127.0.0.1[0m/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 [34m::1[0m/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: [36menp0s3: [0m<BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state [32mUP [0mgroup default qlen 1000
+    link/ether [33m08:00:27:93:95:e6[0m brd [33mff:ff:ff:ff:ff:ff[0m
+    inet [35m192.168.101.10[0m/24 brd [35m192.168.101.255 [0mscope global dynamic noprefixroute enp0s3
+       valid_lft 85642sec preferred_lft 85642sec
+    inet6 [34mfe80::a00:27ff:fe93:95e6[0m/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+3: [36mlxdbr0: [0m<NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state [31mDOWN [0mgroup default qlen 1000
+    link/ether [33m00:16:3e:b1:f5:71[0m brd [33mff:ff:ff:ff:ff:ff[0m
+    inet [35m10.35.110.1[0m/24 scope global lxdbr0
+       valid_lft forever preferred_lft forever
+    inet6 [34mfd42:b2d5:e19e:5118::1[0m/64 scope global 
+       valid_lft forever preferred_lft forever
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ lxc remote list
+[?2004lIf this is your first time running LXD on this machine, you should also run: lxd init
+To start your first container, try: lxc launch ubuntu:24.04
+Or for a virtual machine: lxc launch ubuntu:24.04 --vm
+
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+|         NAME         |                        URL                        |   PROTOCOL    |  AUTH TYPE  | PUBLIC | STATIC | GLOBAL |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| images               | https://images.lxd.canonical.com                  | simplestreams | none        | YES    | NO     | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| local (current)      | unix://                                           | lxd           | file access | NO     | YES    | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| ubuntu               | https://cloud-images.ubuntu.com/releases/         | simplestreams | none        | YES    | YES    | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| ubuntu-daily         | https://cloud-images.ubuntu.com/daily/            | simplestreams | none        | YES    | YES    | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| ubuntu-minimal       | https://cloud-images.ubuntu.com/minimal/releases/ | simplestreams | none        | YES    | YES    | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| ubuntu-minimal-daily | https://cloud-images.ubuntu.com/minimal/daily/    | simplestreams | none        | YES    | YES    | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ [K]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ lxc remote list
+[?2004l+----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+|         NAME         |                        URL                        |   PROTOCOL    |  AUTH TYPE  | PUBLIC | STATIC | GLOBAL |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| images               | https://images.lxd.canonical.com                  | simplestreams | none        | YES    | NO     | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| local (current)      | unix://                                           | lxd           | file access | NO     | YES    | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| ubuntu               | https://cloud-images.ubuntu.com/releases/         | simplestreams | none        | YES    | YES    | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| ubuntu-daily         | https://cloud-images.ubuntu.com/daily/            | simplestreams | none        | YES    | YES    | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| ubuntu-minimal       | https://cloud-images.ubuntu.com/minimal/releases/ | simplestreams | none        | YES    | YES    | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+| ubuntu-minimal-daily | https://cloud-images.ubuntu.com/minimal/daily/    | simplestreams | none        | YES    | YES    | NO     |
++----------------------+---------------------------------------------------+---------------+-------------+--------+--------+--------+
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ [K]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ лч[K[Klxc c[Kve[K[K[K[K[K[Klxc launch ubuntu_[K:22.-[K04 My[K[KContainerFor6Lesoon[K[K[Kson
+[?2004lError: LXD unix socket "/var/snap/lxd/common/lxd/unix.socket" not accessible: permission denied
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ lxc launch ubuntu:22.04 ContainerFor6Lesson[1@s[1@u[1@d[1@o[1@ 
+[?2004lLaunching ContainerFor6Lesson
+Retrieving image: metadata: 100% (685.52MB/s)                                              Retrieving image: rootfs: 1% (2.08MB/s)                                              Retrieving image: rootfs: 2% (2.95MB/s)                                              Retrieving image: rootfs: 3% (3.86MB/s)                                              Retrieving image: rootfs: 4% (4.51MB/s)                                              Retrieving image: rootfs: 5% (4.29MB/s)                                              Retrieving image: rootfs: 6% (4.81MB/s)                                              Retrieving image: rootfs: 7% (5.10MB/s)                                              Retrieving image: rootfs: 8% (5.49MB/s)                                              Retrieving image: rootfs: 9% (5.93MB/s)                                              Retrieving image: rootfs: 10% (6.19MB/s)                                              Retrieving image: rootfs: 10% (6.43MB/s)                                              Retrieving image: rootfs: 11% (6.75MB/s)                                              Retrieving image: rootfs: 12% (6.50MB/s)                                              Retrieving image: rootfs: 13% (6.75MB/s)                                              Retrieving image: rootfs: 14% (6.95MB/s)                                              Retrieving image: rootfs: 15% (6.84MB/s)                                              Retrieving image: rootfs: 16% (6.85MB/s)                                              Retrieving image: rootfs: 17% (6.84MB/s)                                              Retrieving image: rootfs: 18% (6.85MB/s)                                              Retrieving image: rootfs: 19% (6.47MB/s)                                              Retrieving image: rootfs: 19% (6.20MB/s)                                              Retrieving image: rootfs: 20% (6.29MB/s)                                              Retrieving image: rootfs: 21% (6.17MB/s)                                              Retrieving image: rootfs: 22% (6.31MB/s)                                              Retrieving image: rootfs: 23% (6.32MB/s)                                              Retrieving image: rootfs: 24% (6.37MB/s)                                              Retrieving image: rootfs: 25% (6.39MB/s)                                              Retrieving image: rootfs: 26% (6.36MB/s)                                              Retrieving image: rootfs: 27% (6.14MB/s)                                              Retrieving image: rootfs: 28% (6.18MB/s)                                              Retrieving image: rootfs: 29% (5.99MB/s)                                              Retrieving image: rootfs: 29% (5.96MB/s)                                              Retrieving image: rootfs: 30% (5.93MB/s)                                              Retrieving image: rootfs: 31% (5.97MB/s)                                              Retrieving image: rootfs: 32% (5.87MB/s)                                              Retrieving image: rootfs: 33% (5.65MB/s)                                              Retrieving image: rootfs: 34% (5.54MB/s)                                              Retrieving image: rootfs: 35% (5.61MB/s)                                              Retrieving image: rootfs: 36% (5.46MB/s)                                              Retrieving image: rootfs: 37% (5.48MB/s)                                              Retrieving image: rootfs: 38% (5.48MB/s)                                              Retrieving image: rootfs: 38% (5.44MB/s)                                              Retrieving image: rootfs: 39% (5.44MB/s)                                              Retrieving image: rootfs: 40% (5.45MB/s)                                              Retrieving image: rootfs: 41% (4.92MB/s)                                              Retrieving image: rootfs: 42% (4.95MB/s)                                              Retrieving image: rootfs: 43% (4.91MB/s)                                              Retrieving image: rootfs: 44% (4.91MB/s)                                              Retrieving image: rootfs: 45% (4.78MB/s)                                              Retrieving image: rootfs: 46% (4.79MB/s)                                              Retrieving image: rootfs: 47% (4.82MB/s)                                              Retrieving image: rootfs: 47% (4.83MB/s)                                              Retrieving image: rootfs: 48% (4.77MB/s)                                              Retrieving image: rootfs: 49% (4.73MB/s)                                              Retrieving image: rootfs: 50% (4.78MB/s)                                              Retrieving image: rootfs: 51% (4.77MB/s)                                              Retrieving image: rootfs: 52% (4.79MB/s)                                              Retrieving image: rootfs: 53% (4.78MB/s)                                              Retrieving image: rootfs: 54% (4.81MB/s)                                              Retrieving image: rootfs: 55% (4.78MB/s)                                              Retrieving image: rootfs: 56% (4.83MB/s)                                              Retrieving image: rootfs: 56% (4.77MB/s)                                              Retrieving image: rootfs: 57% (4.78MB/s)                                              Retrieving image: rootfs: 58% (4.76MB/s)                                              Retrieving image: rootfs: 59% (4.74MB/s)                                              Retrieving image: rootfs: 60% (4.75MB/s)                                              Retrieving image: rootfs: 61% (4.70MB/s)                                              Retrieving image: rootfs: 62% (4.71MB/s)                                              Retrieving image: rootfs: 63% (4.74MB/s)                                              Retrieving image: rootfs: 64% (4.74MB/s)                                              Retrieving image: rootfs: 65% (4.76MB/s)                                              Retrieving image: rootfs: 65% (4.77MB/s)                                              Retrieving image: rootfs: 66% (4.77MB/s)                                              Retrieving image: rootfs: 67% (4.72MB/s)                                              Retrieving image: rootfs: 68% (4.74MB/s)                                              Retrieving image: rootfs: 69% (4.66MB/s)                                              Retrieving image: rootfs: 70% (4.08MB/s)                                              Retrieving image: rootfs: 71% (4.06MB/s)                                              Retrieving image: rootfs: 72% (4.10MB/s)                                              Retrieving image: rootfs: 73% (4.09MB/s)                                              Retrieving image: rootfs: 74% (4.07MB/s)                                              Retrieving image: rootfs: 75% (4.10MB/s)                                              Retrieving image: rootfs: 75% (4.09MB/s)                                              Retrieving image: rootfs: 76% (4.11MB/s)                                              Retrieving image: rootfs: 77% (4.09MB/s)                                              Retrieving image: rootfs: 78% (4.12MB/s)                                              Retrieving image: rootfs: 79% (4.12MB/s)                                              Retrieving image: rootfs: 80% (4.13MB/s)                                              Retrieving image: rootfs: 81% (4.12MB/s)                                              Retrieving image: rootfs: 82% (4.14MB/s)                                              Retrieving image: rootfs: 83% (4.12MB/s)                                              Retrieving image: rootfs: 84% (4.13MB/s)                                              Retrieving image: rootfs: 84% (4.12MB/s)                                              Retrieving image: rootfs: 85% (4.13MB/s)                                              Retrieving image: rootfs: 86% (4.11MB/s)                                              Retrieving image: rootfs: 87% (4.09MB/s)                                              Retrieving image: rootfs: 88% (4.10MB/s)                                              Retrieving image: rootfs: 89% (4.09MB/s)                                              Retrieving image: rootfs: 90% (4.01MB/s)                                              Retrieving image: rootfs: 91% (4.02MB/s)                                              Retrieving image: rootfs: 92% (4.02MB/s)                                              Retrieving image: rootfs: 93% (4.00MB/s)                                              Retrieving image: rootfs: 93% (4.01MB/s)                                              Retrieving image: rootfs: 94% (3.99MB/s)                                              Retrieving image: rootfs: 95% (4.00MB/s)                                              Retrieving image: rootfs: 96% (4.00MB/s)                                              Retrieving image: rootfs: 97% (4.02MB/s)                                              Retrieving image: rootfs: 98% (4.01MB/s)                                              Retrieving image: rootfs: 99% (4.00MB/s)                                              Retrieving image: rootfs: 100% (4.02MB/s)Retrieving image: Unpacking image: 100% (701.87MB/s)                                                     Retrieving image: Unpacking image: 100% (701.87MB/s)                                                     [?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ sudo lxc launch ubuntu:22.04 ContainerFor6Lesson[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ lxc list
+[?2004lError: LXD unix socket "/var/snap/lxd/common/lxd/unix.socket" not accessible: permission denied
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ lxc list[1@s[1@d[1@u[1@o[1P[1P[1P[1@u[1@d[1@o[1@ 
+[?2004l+---------------------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+|        NAME         |  STATE  |         IPV4         |                     IPV6                      |   TYPE    | SNAPSHOTS |
++---------------------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+| ContainerFor6Lesson | RUNNING | 10.35.110.196 (eth0) | fd42:b2d5:e19e:5118:216:3eff:fe28:2ed0 (eth0) | CONTAINER | 0         |
++---------------------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ [K]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ sudo lxc list[Kclear
+[?2004l[H[2J[3J[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ clearsudo lxc list
+[?2004l+---------------------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+|        NAME         |  STATE  |         IPV4         |                     IPV6                      |   TYPE    | SNAPSHOTS |
++---------------------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+| ContainerFor6Lesson | RUNNING | 10.35.110.196 (eth0) | fd42:b2d5:e19e:5118:216:3eff:fe28:2ed0 (eth0) | CONTAINER | 0         |
++---------------------+---------+----------------------+-----------------------------------------------+-----------+-----------+
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ [K]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ sudo lxc exec ContainerFor6Lesson
+[?2004lDescription:
+  Execute commands in instances
+
+  The command is executed directly using exec, so there is no shell and
+  shell patterns (variables, file redirects, ...) won't be understood.
+  If you need a shell environment you need to execute the shell
+  executable, passing the shell commands as arguments, for example:
+
+    lxc exec <instance> -- sh -c "cd /tmp && pwd"
+
+  Mode defaults to non-interactive, interactive mode is selected if both stdin AND stdout are terminals (stderr is ignored).
+
+Usage:
+  lxc exec [<remote>:]<instance> [flags] [--] <command line>
+
+Flags:
+      --cwd                    Directory to run the command in (default /root)
+  -n, --disable-stdin          Disable stdin (reads from /dev/null)
+      --env                    Environment variable to set (e.g. HOME=/home/foo)
+  -t, --force-interactive      Force pseudo-terminal allocation
+  -T, --force-noninteractive   Disable pseudo-terminal allocation
+      --group                  Group ID to run the command as (default 0)
+      --mode                   Override the terminal mode (auto, interactive or non-interactive) (default "auto")
+      --user                   User ID to run the command as (default 0)
+
+Global Flags:
+      --debug          Show all debug messages
+      --force-local    Force using the local unix socket
+  -h, --help           Print help
+      --project        Override the source project
+  -q, --quiet          Don't show progress information
+      --sub-commands   Use with help or --help to view sub-commands
+  -v, --verbose        Show all information messages
+      --version        Print version number
+Error: Invalid number of arguments
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ sudo lxc exec ContainerFor6Lesson /bin/bash
+[?2004l[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# ls
+[?2004l[0m[01;34msnap[0m
+[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# cd [K[K[Kll
+[?2004ltotal 7
+drwx------  4 root root    6 Apr 15 11:23 [0m[01;34m.[0m/
+drwxr-xr-x 18 root root   24 Mar 27 10:58 [01;34m..[0m/
+-rw-r--r--  1 root root 3106 Oct 15  2021 .bashrc
+-rw-r--r--  1 root root  161 Jul  9  2019 .profile
+drwx------  2 root root    3 Apr 15 11:23 [01;34m.ssh[0m/
+drwx------  3 root root    3 Apr 15 11:23 [01;34msnap[0m/
+[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# sudo aot i[K[K[K[Kpt install [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kapt install [K[K[K[K[K[K[K[K[K[K[K[Ksudo apt update
+[?2004l[33m0% [Working][0m[33m0% [Waiting for headers] [Connecting to security.ubuntu.com (91.189.91.81)][0m                                                                           Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+[33m                                                                           0% [Connecting to security.ubuntu.com (91.189.91.81)][0m                                                     Get:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+[33m0% [2 InRelease 15.5 kB/128 kB 12%] [Waiting for headers][0m                                                         Get:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+[33m0% [2 InRelease 15.5 kB/128 kB 12%] [3 InRelease 8332 B/129 kB 6%][0m[33m0% [2 InRelease 100 kB/128 kB 78%] [3 InRelease 42.9 kB/129 kB 33%][0m[33m                                                                   0% [3 InRelease 65.9 kB/129 kB 51%][0m                                   Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+[33m0% [4 InRelease 8332 B/127 kB 7%] [3 InRelease 91.9 kB/129 kB 71%][0m[33m0% [4 InRelease 51.5 kB/127 kB 41%] [3 InRelease 106 kB/129 kB 82%][0m[33m0% [4 InRelease 115 kB/127 kB 90%] [3 InRelease 129 kB/129 kB 100%][0m[33m                                                                   0% [4 InRelease 115 kB/127 kB 90%][0m[33m                                  0% [Working][0m[33m0% [Working][0m[33m0% [Working][0m[33m0% [Working][0m            Get:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+[33m0% [5 Packages 8398 B/14.1 MB 0%][0m[33m0% [5 Packages 350 kB/14.1 MB 2%][0m[33m0% [5 Packages 533 kB/14.1 MB 4%]                                                 150 kB/s 2min 12s[0m[33m0% [5 Packages 1142 kB/14.1 MB 8%]                                                 150 kB/s 2min 8s[0m[33m0% [5 Packages 1715 kB/14.1 MB 12%]                                                150 kB/s 2min 4s[0m[33m0% [5 Packages 1899 kB/14.1 MB 13%]                                                150 kB/s 2min 3s[0m[33m0% [5 Packages 2348 kB/14.1 MB 17%]                                                150 kB/s 2min 0s[0m[33m0% [5 Packages 3256 kB/14.1 MB 23%]                                               150 kB/s 1min 54s[0m[33m0% [5 Packages 3716 kB/14.1 MB 26%]                                               150 kB/s 1min 51s[0m[33m0% [5 Packages 4386 kB/14.1 MB 31%]                                               150 kB/s 1min 46s[0m[33m0% [5 Packages 4986 kB/14.1 MB 35%]                                               150 kB/s 2min 38s[0m[33m0% [5 Packages 6195 kB/14.1 MB 44%]                                               150 kB/s 2min 30s[0m[33m0% [5 Packages 7341 kB/14.1 MB 52%]                                               150 kB/s 2min 22s[0m[33m0% [5 Packages 8618 kB/14.1 MB 61%]                                               150 kB/s 2min 13s[0m[33m0% [5 Packages 9662 kB/14.1 MB 69%]                                                150 kB/s 2min 6s[0m[33m0% [5 Packages 11.1 MB/14.1 MB 79%]                                                   1657 kB/s 10s[0m[33m0% [5 Packages 11.8 MB/14.1 MB 84%]                                                   1657 kB/s 10s[0m[33m0% [5 Packages 13.1 MB/14.1 MB 93%]                                                    1657 kB/s 9s[0m[33m0% [5 Packages 13.4 MB/14.1 MB 95%]                                                    1657 kB/s 9s[0m[33m0% [Working]                                                                           1657 kB/s 8s[0m[33m0% [5 Packages store 0 B] [Waiting for headers]                                        1657 kB/s 8s[0m                                                                                                   Get:6 http://archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+[33m0% [5 Packages store 0 B] [6 Translation-en 58.8 kB/5652 kB 1%]                        1657 kB/s 8s[0m[33m0% [5 Packages store 0 B] [6 Translation-en 766 kB/5652 kB 14%]                        1657 kB/s 8s[0m[33m0% [5 Packages store 0 B] [6 Translation-en 2538 kB/5652 kB 45%]                       1657 kB/s 7s[0m[33m0% [5 Packages store 0 B] [6 Translation-en 4122 kB/5652 kB 73%]                       1657 kB/s 6s[0m[33m0% [5 Packages store 0 B] [6 Translation-en 4321 kB/5652 kB 76%]                      1657 kB/s 10s[0m[33m                                                                                                   0% [5 Packages store 0 B] [6 Translation-en 4595 kB/5652 kB 81%] [Waiting for headers][0m                                                                                      Get:7 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2222 kB]
+[33m0% [5 Packages store 0 B] [6 Translation-en 5175 kB/5652 kB 92%] [7 Packages 9839 B/2222 kB 0%][0m[33m0% [5 Packages store 0 B] [6 Translation-en 5539 kB/5652 kB 98%] [7 Packages 9839 B/2222 kB 0%][0m[33m0% [5 Packages store 0 B] [7 Packages 9839 B/2222 kB 0%]                              1361 kB/s 12s[0m                                                                                                   Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+[33m                                                                                                   0% [5 Packages store 0 B] [8 Commands-amd64 98.5 kB/286 kB 34%] [7 Packages 9839 B/2222 kB 0%][0m                                                                                              Get:9 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+[33m                                                                                              0% [5 Packages store 0 B] [9 Packages 140 kB/217 kB 64%] [7 Packages 9839 B/2222 kB 0%][0m[33m0% [5 Packages store 0 B] [7 Packages 9839 B/2222 kB 0%]                              1361 kB/s 11s[0m                                                                                                   Get:10 http://archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+                                                                                                   Get:11 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+[33m                                                                                                   0% [5 Packages store 0 B] [11 Commands-amd64 7490 B/8372 B 89%] [7 Packages 9839 B/2222 kB 0%][0m                                                                                              Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2468 kB]
+[33m                                                                                              0% [5 Packages store 0 B] [12 Packages 261 kB/2468 kB 11%] [7 Packages 9839 B/2222 kB 0%][0m[33m0% [5 Packages store 0 B] [12 Packages 802 kB/2468 kB 33%] [7 Packages 32.9 kB/2222 kB 1%][0m[33m0% [5 Packages store 0 B] [12 Packages 1070 kB/2468 kB 43%] [7 Packages 32.9 kB/2222 kB 1%][0m[33m0% [5 Packages store 0 B] [12 Packages 1463 kB/2468 kB 59%] [7 Packages 50.2 kB/2222 kB 2%][0m[33m0% [5 Packages store 0 B] [12 Packages 2020 kB/2468 kB 82%] [7 Packages 60.2 kB/2222 kB 3%][0m[33m0% [5 Packages store 0 B] [12 Packages 2405 kB/2468 kB 97%] [7 Packages 63.1 kB/2222 kB 3%][0m[33m0% [5 Packages store 0 B] [7 Packages 66.0 kB/2222 kB 3%]                              1361 kB/s 9s[0m                                                                                                   Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [405 kB]
+[33m                                                                                                   0% [5 Packages store 0 B] [13 Translation-en 43.9 kB/405 kB 11%] [7 Packages 66.0 kB/2222 kB 3%][0m                                                                                                Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [18.5 kB]
+                                                                                                Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [3269 kB]
+[33m                                                                                                0% [5 Packages store 0 B] [15 Packages 160 kB/3269 kB 5%] [7 Packages 68.9 kB/2222 kB 3%][0m[33m0% [5 Packages store 0 B] [15 Packages 547 kB/3269 kB 17%] [7 Packages 97.7 kB/2222 kB 4%][0m[33m65% [5 Packages store 0 B] [15 Packages 924 kB/3269 kB 28%] [7 Packages 97.7 kB/2222 kB 4%][0m[33m67% [5 Packages store 0 B] [15 Packages 1598 kB/3269 kB 49%] [7 Packages 97.7 kB/2222 kB 4%][0m[33m                                                                                            68% [5 Packages store 0 B] [15 Packages 2104 kB/3269 kB 64%] [7 Packages 111 kB/2222 kB 5%][0m[33m70% [5 Packages store 0 B] [15 Packages 3195 kB/3269 kB 98%] [7 Packages 131 kB/2222 kB 6%][0m[33m70% [5 Packages store 0 B] [7 Packages 135 kB/2222 kB 6%]                              1096 kB/s 8s[0m                                                                                                   Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [580 kB]
+[33m                                                                                                   70% [5 Packages store 0 B] [16 Translation-en 6676 B/580 kB 1%] [7 Packages 138 kB/2222 kB 6%][0m                                                                                              Get:17 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1200 kB]
+[33m                                                                                              72% [5 Packages store 0 B] [17 Packages 69.0 kB/1200 kB 6%] [7 Packages 151 kB/2222 kB 7%][0m[33m73% [5 Packages store 0 B] [17 Packages 610 kB/1200 kB 51%] [7 Packages 168 kB/2222 kB 8%][0m[33m74% [5 Packages store 0 B] [17 Packages 851 kB/1200 kB 71%] [7 Packages 177 kB/2222 kB 8%][0m[33m74% [5 Packages store 0 B] [17 Packages 968 kB/1200 kB 81%] [7 Packages 181 kB/2222 kB 8%][0m[33m74% [5 Packages store 0 B] [17 Packages 1055 kB/1200 kB 88%] [7 Packages 184 kB/2222 kB 8%][0m                                                                                           Get:18 http://archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [296 kB]
+[33m74% [5 Packages store 0 B] [18 Translation-en 20.9 kB/296 kB 7%] [7 Packages 197 kB/2222 kB 9%][0m[33m74% [5 Packages store 0 B] [18 Translation-en 20.9 kB/296 kB 7%] [7 Packages 197 kB/2222 kB 9%][0m[33m75% [5 Packages store 0 B] [18 Translation-en 103 kB/296 kB 35%] [7 Packages 204 kB/2222 kB 9%][0m[33m75% [5 Packages store 0 B] [18 Translation-en 276 kB/296 kB 93%] [7 Packages 210 kB/2222 kB 9%][0m[33m75% [5 Packages store 0 B] [7 Packages 219 kB/2222 kB 10%]                             1096 kB/s 6s[0m                                                                                                   Get:19 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [28.7 kB]
+                                                                                                   Get:20 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [46.5 kB]
+[33m                                                                                                   75% [5 Packages store 0 B] [20 Packages 20.5 kB/46.5 kB 44%] [7 Packages 219 kB/2222 kB 10%][0m[33m75% [5 Packages store 0 B] [20 Packages 20.5 kB/46.5 kB 44%] [7 Packages 227 kB/2222 kB 10%][0m                                                                                            Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [11.8 kB]
+                                                                                            Get:22 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [592 B]
+                                                                                            Get:23 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [68.4 kB]
+[33m75% [5 Packages store 0 B] [23 Packages 44.0 kB/68.4 kB 64%] [7 Packages 227 kB/2222 kB 10%][0m[33m75% [5 Packages store 0 B] [23 Packages 44.0 kB/68.4 kB 64%] [7 Packages 233 kB/2222 kB 10%][0m                                                                                            Get:24 http://archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [11.1 kB]
+                                                                                            Get:25 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [392 B]
+                                                                                            Get:26 http://archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
+                                                                                            Get:27 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [30.0 kB]
+[33m75% [5 Packages store 0 B] [27 Packages 30.0 kB/30.0 kB 100%] [7 Packages 233 kB/2222 kB 10%][0m                                                                                             Get:28 http://archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.6 kB]
+[33m76% [5 Packages store 0 B] [28 Translation-en 8403 B/16.6 kB 51%] [7 Packages 233 kB/2222 kB 10%][0m                                                                                                 Get:29 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [672 B]
+[33m76% [5 Packages store 0 B] [Waiting for headers] [7 Packages 250 kB/2222 kB 11%]       376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [Waiting for headers] [7 Packages 250 kB/2222 kB 11%]       376 kB/s 19s[0m                                                                                                   Get:30 http://archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
+[33m76% [5 Packages store 0 B] [7 Packages 250 kB/2222 kB 11%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 282 kB/2222 kB 13%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 282 kB/2222 kB 13%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 305 kB/2222 kB 14%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 305 kB/2222 kB 14%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 305 kB/2222 kB 14%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 314 kB/2222 kB 14%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 328 kB/2222 kB 15%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 328 kB/2222 kB 15%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 328 kB/2222 kB 15%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 334 kB/2222 kB 15%]                             376 kB/s 19s[0m[33m76% [5 Packages store 0 B] [7 Packages 334 kB/2222 kB 15%]                       28.4 kB/s 4min 13s[0m[33m76% [5 Packages store 0 B] [7 Packages 360 kB/2222 kB 16%]                       28.4 kB/s 4min 12s[0m[33m76% [5 Packages store 0 B] [7 Packages 360 kB/2222 kB 16%]                       28.4 kB/s 4min 12s[0m[33m76% [5 Packages store 0 B] [7 Packages 383 kB/2222 kB 17%]                       28.4 kB/s 4min 11s[0m[33m76% [5 Packages store 0 B] [7 Packages 383 kB/2222 kB 17%]                       28.4 kB/s 4min 11s[0m[33m76% [5 Packages store 0 B] [7 Packages 406 kB/2222 kB 18%]                       28.4 kB/s 4min 10s[0m[33m76% [5 Packages store 0 B] [7 Packages 406 kB/2222 kB 18%]                       28.4 kB/s 4min 10s[0m[33m76% [5 Packages store 0 B] [7 Packages 406 kB/2222 kB 18%]                       28.4 kB/s 4min 10s[0m[33m76% [5 Packages store 0 B] [7 Packages 419 kB/2222 kB 19%]                       28.4 kB/s 4min 10s[0m[33m76% [5 Packages store 0 B] [7 Packages 419 kB/2222 kB 19%]                       28.4 kB/s 4min 10s[0m[33m76% [5 Packages store 0 B] [7 Packages 443 kB/2222 kB 20%]                        28.4 kB/s 4min 9s[0m[33m76% [5 Packages store 0 B] [7 Packages 462 kB/2222 kB 21%]                        28.4 kB/s 4min 8s[0m[33m76% [5 Packages store 0 B] [7 Packages 478 kB/2222 kB 22%]                        22.9 kB/s 5min 7s[0m[33m76% [5 Packages store 0 B] [7 Packages 495 kB/2222 kB 22%]                        22.9 kB/s 5min 6s[0m[33m76% [5 Packages store 0 B] [7 Packages 515 kB/2222 kB 23%]                        22.9 kB/s 5min 5s[0m[33m76% [5 Packages store 0 B] [7 Packages 540 kB/2222 kB 24%]                        22.9 kB/s 5min 4s[0m[33m76% [7 Packages 544 kB/2222 kB 24%]                                               22.9 kB/s 5min 4s[0m[33m76% [6 Translation-en store 0 B] [7 Packages 544 kB/2222 kB 24%]                  22.9 kB/s 5min 4s[0m[33m76% [6 Translation-en store 0 B] [7 Packages 567 kB/2222 kB 26%]                  22.9 kB/s 5min 3s[0m[33m77% [6 Translation-en store 0 B] [7 Packages 593 kB/2222 kB 27%]                  22.9 kB/s 5min 2s[0m[33m77% [6 Translation-en store 0 B] [7 Packages 619 kB/2222 kB 28%]                  22.9 kB/s 5min 1s[0m[33m77% [7 Packages 622 kB/2222 kB 28%]                                               22.9 kB/s 5min 1s[0m[33m77% [8 Commands-amd64 store 0 B] [7 Packages 622 kB/2222 kB 28%]                  22.9 kB/s 5min 1s[0m[33m77% [7 Packages 626 kB/2222 kB 28%]                                               22.9 kB/s 5min 0s[0m[33m77% [9 Packages store 0 B] [7 Packages 626 kB/2222 kB 28%]                        22.9 kB/s 5min 0s[0m[33m77% [7 Packages 636 kB/2222 kB 29%]                                               22.9 kB/s 5min 0s[0m[33m77% [10 Translation-en store 0 B] [7 Packages 636 kB/2222 kB 29%]                 22.9 kB/s 5min 0s[0m[33m78% [7 Packages 642 kB/2222 kB 29%]                                               22.9 kB/s 5min 0s[0m[33m78% [11 Commands-amd64 store 0 B] [7 Packages 642 kB/2222 kB 29%]                 22.9 kB/s 5min 0s[0m[33m78% [7 Packages 642 kB/2222 kB 29%]                                               22.9 kB/s 5min 0s[0m[33m78% [12 Packages store 0 B] [7 Packages 642 kB/2222 kB 29%]                       22.9 kB/s 5min 0s[0m[33m78% [12 Packages store 0 B] [7 Packages 672 kB/2222 kB 30%]                      22.9 kB/s 4min 58s[0m^C
+[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# sudo apt update[K[K[K[K[K[Kinstall apache2[K2
+[?2004lReading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils bzip2 libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap liblua5.3-0 mailcap mime-support ssl-cert
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser bzip2-doc
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils bzip2 libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap liblua5.3-0 mailcap mime-support ssl-cert
+0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2141 kB of archives.
+After this operation, 8524 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+[33m0% [Working][0m            Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libapr1 amd64 1.7.0-8ubuntu0.22.04.2 [108 kB]
+[33m0% [1 libapr1 0 B/108 kB 0%][0m[33m3% [1 libapr1 73.1 kB/108 kB 68%][0m[33m                                 6% [Waiting for headers][0m                        Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1 amd64 1.6.1-5ubuntu4.22.04.2 [92.8 kB]
+[33m6% [2 libaprutil1 0 B/92.8 kB 0%][0m[33m                                 11% [Waiting for headers][0m                         Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-5ubuntu4.22.04.2 [11.3 kB]
+[33m11% [3 libaprutil1-dbd-sqlite3 1701 B/11.3 kB 15%][0m[33m                                                  13% [Waiting for headers][0m                         Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-ldap amd64 1.6.1-5ubuntu4.22.04.2 [9170 B]
+[33m13% [4 libaprutil1-ldap 9170 B/9170 B 100%][0m[33m                                           14% [Waiting for headers][0m                         Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 liblua5.3-0 amd64 5.3.6-1build1 [140 kB]
+[33m14% [5 liblua5.3-0 0 B/140 kB 0%][0m[33m                                 21% [Working][0m             Err:6 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-bin amd64 2.4.52-1ubuntu4.13
+  404  Not Found [IP: 91.189.91.81 80]
+             Err:7 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-data all 2.4.52-1ubuntu4.13
+  404  Not Found [IP: 91.189.91.81 80]
+             Err:8 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-utils amd64 2.4.52-1ubuntu4.13
+  404  Not Found [IP: 91.189.91.81 80]
+             Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 mailcap all 3.70+nmu1ubuntu1 [23.8 kB]
+[33m24% [Waiting for headers][0m                         Get:10 http://archive.ubuntu.com/ubuntu jammy/main amd64 mime-support all 3.66 [3696 B]
+                         Err:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2 amd64 2.4.52-1ubuntu4.13
+  404  Not Found [IP: 91.189.91.81 80]
+                         Get:12 http://archive.ubuntu.com/ubuntu jammy/main amd64 bzip2 amd64 1.0.8-5build1 [34.8 kB]
+[33m28% [Waiting for headers][0m                         Get:13 http://archive.ubuntu.com/ubuntu jammy/main amd64 ssl-cert all 1.1.2 [17.4 kB]
+[33m                         30% [Working][0m             Fetched 441 kB in 2s (181 kB/s)
+[1;31mE: [0mFailed to fetch http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-bin_2.4.52-1ubuntu4.13_amd64.deb  404  Not Found [IP: 91.189.91.81 80][0m
+[1;31mE: [0mFailed to fetch http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-data_2.4.52-1ubuntu4.13_all.deb  404  Not Found [IP: 91.189.91.81 80][0m
+[1;31mE: [0mFailed to fetch http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-utils_2.4.52-1ubuntu4.13_amd64.deb  404  Not Found [IP: 91.189.91.81 80][0m
+[1;31mE: [0mFailed to fetch http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.52-1ubuntu4.13_amd64.deb  404  Not Found [IP: 91.189.91.81 80][0m
+[1;31mE: [0mUnable to fetch some archives, maybe run apt-get update or try with --fix-missing?[0m
+[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# sudo apt install apache2[9Pupdate
+[?2004l[33m0% [Working][0m[33m0% [Connecting to archive.ubuntu.com (185.125.190.83)] [Connecting to security.ubuntu.com (91.189.9[0m                                                                                                   Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+[33m                                                                                                   0% [Waiting for headers] [Waiting for headers][0m                                              Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+[33m0% [Waiting for headers] [2 InRelease 8332 B/129 kB 6%][0m                                                       Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+[33m0% [3 InRelease 11.2 kB/128 kB 9%] [2 InRelease 14.1 kB/129 kB 11%][0m[33m0% [3 InRelease 109 kB/128 kB 85%] [2 InRelease 70.3 kB/129 kB 54%][0m[33m                                                                   0% [2 InRelease 99.1 kB/129 kB 77%][0m[33m                                   0% [Waiting for headers][0m                        Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+[33m0% [4 InRelease 63.1 kB/127 kB 50%][0m[33m                                   0% [Working][0m[33m0% [Working][0m[33m0% [Working][0m[33m0% [Working][0m[33m0% [Working][0m[33m0% [Working][0m[33m0% [Working][0m            Get:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+[33m0% [Working]                                                                           2121 kB/s 2s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 2s[0m                                                                                                   Get:6 http://archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m                                                                                                   Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+                                                                                                   Get:8 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+                                                                                                   Get:9 http://archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+                                                                                                   Get:10 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 3s[0m                                                                                                   Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2468 kB]
+[33m0% [5 Packages store 64.3 MB]                                                          2121 kB/s 2s[0m                                                                                                   Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [405 kB]
+[33m0% [5 Packages store 64.3 MB] [12 Translation-en 405 kB]                               1457 kB/s 3s[0m                                                                                                   Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [18.5 kB]
+[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 3s[0m                                                                                                   Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [3269 kB]
+                                                                                                   Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [580 kB]
+                                                                                                   Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1200 kB]
+[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m                                                                                                   Get:17 http://archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [296 kB]
+                                                                                                   Get:18 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [28.7 kB]
+                                                                                                   Get:19 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [46.5 kB]
+                                                                                                   Get:20 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [11.8 kB]
+[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m                                                                                                   Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [592 B]
+[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 0s[0m[33m0% [5 Packages store 64.3 MB]                                                          1457 kB/s 5s[0m[33m0% [5 Packages store 64.3 MB] [Waiting for headers]                                    1457 kB/s 5s[0m                                                                                                   Get:22 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2222 kB]
+[33m0% [5 Packages store 64.3 MB] [22 Packages 719 kB/2222 kB 32%]                         1457 kB/s 4s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 748 kB/2222 kB 34%]                          968 kB/s 7s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 787 kB/2222 kB 35%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 787 kB/2222 kB 35%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 836 kB/2222 kB 38%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 836 kB/2222 kB 38%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 876 kB/2222 kB 39%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 917 kB/2222 kB 41%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 917 kB/2222 kB 41%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 961 kB/2222 kB 43%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 961 kB/2222 kB 43%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 993 kB/2222 kB 45%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 993 kB/2222 kB 45%]                          968 kB/s 6s[0m[33m0% [5 Packages store 64.3 MB] [22 Packages 1033 kB/2222 kB 46%]                  46.2 kB/s 2min 20s[0m[33m77% [5 Packages store 64.3 MB] [22 Packages 1033 kB/2222 kB 46%]                 46.2 kB/s 2min 23s[0m                                                                                                   Get:23 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [68.4 kB]
+[33m77% [5 Packages store 64.3 MB] [22 Packages 1033 kB/2222 kB 46%]                 46.2 kB/s 2min 21s[0m                                                                                                   Get:24 http://archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [11.1 kB]
+                                                                                                   Get:25 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [392 B]
+                                                                                                   Get:26 http://archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
+                                                                                                   Get:27 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [30.0 kB]
+                                                                                                   Get:28 http://archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.6 kB]
+                                                                                                   Get:29 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [672 B]
+                                                                                                   Get:30 http://archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
+[33m77% [5 Packages store 64.3 MB] [22 Packages 1074 kB/2222 kB 48%]                 46.2 kB/s 2min 19s[0m[33m77% [5 Packages store 64.3 MB] [22 Packages 1074 kB/2222 kB 48%]                 46.2 kB/s 2min 19s[0m[33m77% [5 Packages store 64.3 MB] [22 Packages 1074 kB/2222 kB 48%]                 46.2 kB/s 2min 19s[0m[33m77% [5 Packages store 64.3 MB] [22 Packages 1114 kB/2222 kB 50%]                 46.2 kB/s 2min 18s[0m[33m77% [5 Packages store 64.3 MB] [22 Packages 1114 kB/2222 kB 50%]                 46.2 kB/s 2min 18s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1157 kB/2222 kB 52%]                 46.2 kB/s 2min 17s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1157 kB/2222 kB 52%]                 46.2 kB/s 2min 17s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1163 kB/2222 kB 52%]                 46.2 kB/s 2min 17s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1166 kB/2222 kB 52%]                 46.2 kB/s 2min 17s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1215 kB/2222 kB 55%]                 46.2 kB/s 2min 16s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1215 kB/2222 kB 55%]                  50.8 kB/s 2min 4s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1264 kB/2222 kB 57%]                  50.8 kB/s 2min 3s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1264 kB/2222 kB 57%]                  50.8 kB/s 2min 3s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1313 kB/2222 kB 59%]                  50.8 kB/s 2min 2s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1330 kB/2222 kB 60%]                  50.8 kB/s 2min 2s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1354 kB/2222 kB 61%]                  50.8 kB/s 2min 1s[0m[33m78% [5 Packages store 64.3 MB] [22 Packages 1386 kB/2222 kB 62%]                  50.8 kB/s 2min 1s[0m[33m78% [22 Packages 1393 kB/2222 kB 63%]                                             50.8 kB/s 2min 0s[0m[33m78% [6 Translation-en store 29.8 MB] [22 Packages 1393 kB/2222 kB 63%]            50.8 kB/s 2min 0s[0m[33m78% [6 Translation-en store 29.8 MB] [22 Packages 1422 kB/2222 kB 64%]            50.8 kB/s 2min 0s[0m[33m78% [6 Translation-en store 29.8 MB] [22 Packages 1455 kB/2222 kB 65%]           50.8 kB/s 1min 59s[0m[33m79% [6 Translation-en store 29.8 MB] [22 Packages 1488 kB/2222 kB 67%]           50.8 kB/s 1min 59s[0m[33m79% [6 Translation-en store 29.8 MB] [22 Packages 1533 kB/2222 kB 69%]           50.8 kB/s 1min 58s[0m[33m79% [6 Translation-en store 29.8 MB] [22 Packages 1576 kB/2222 kB 71%]           50.8 kB/s 1min 57s[0m[33m79% [6 Translation-en store 29.8 MB] [22 Packages 1627 kB/2222 kB 73%]           66.1 kB/s 1min 29s[0m[33m79% [6 Translation-en store 29.8 MB] [22 Packages 1670 kB/2222 kB 75%]           66.1 kB/s 1min 28s[0m[33m79% [6 Translation-en store 29.8 MB] [22 Packages 1726 kB/2222 kB 78%]           66.1 kB/s 1min 27s[0m[33m79% [22 Packages 1729 kB/2222 kB 78%]                                            66.1 kB/s 1min 27s[0m[33m79% [7 Commands-amd64 store 1287 kB] [22 Packages 1729 kB/2222 kB 78%]           66.1 kB/s 1min 27s[0m[33m80% [22 Packages 1740 kB/2222 kB 78%]                                            66.1 kB/s 1min 27s[0m[33m80% [8 Packages store 918 kB] [22 Packages 1740 kB/2222 kB 78%]                  66.1 kB/s 1min 27s[0m[33m80% [22 Packages 1752 kB/2222 kB 79%]                                            66.1 kB/s 1min 27s[0m[33m80% [9 Translation-en store 500 kB] [22 Packages 1752 kB/2222 kB 79%]            66.1 kB/s 1min 27s[0m[33m80% [22 Packages 1761 kB/2222 kB 79%]                                            66.1 kB/s 1min 27s[0m[33m80% [10 Commands-amd64 store 29.8 kB] [22 Packages 1761 kB/2222 kB 79%]          66.1 kB/s 1min 27s[0m[33m80% [22 Packages 1762 kB/2222 kB 79%]                                            66.1 kB/s 1min 27s[0m[33m80% [11 Packages store 0 B] [22 Packages 1762 kB/2222 kB 79%]                    66.1 kB/s 1min 27s[0m[33m80% [11 Packages store 0 B] [22 Packages 1820 kB/2222 kB 82%]                    66.1 kB/s 1min 26s[0m[33m81% [11 Packages store 0 B] [22 Packages 1879 kB/2222 kB 85%]                    66.1 kB/s 1min 25s[0m[33m81% [22 Packages 1892 kB/2222 kB 85%]                                            66.1 kB/s 1min 25s[0m[33m81% [12 Translation-en store 0 B] [22 Packages 1892 kB/2222 kB 85%]              66.1 kB/s 1min 25s[0m[33m81% [22 Packages 1925 kB/2222 kB 87%]                                            66.1 kB/s 1min 24s[0m[33m81% [13 Commands-amd64 store 0 B] [22 Packages 1925 kB/2222 kB 87%]              66.1 kB/s 1min 24s[0m[33m81% [22 Packages 1925 kB/2222 kB 87%]                                            66.1 kB/s 1min 24s[0m[33m81% [14 Packages store 0 B] [22 Packages 1925 kB/2222 kB 87%]                    66.1 kB/s 1min 24s[0m[33m82% [14 Packages store 0 B] [22 Packages 1995 kB/2222 kB 90%]                    66.1 kB/s 1min 23s[0m[33m82% [14 Packages store 0 B] [22 Packages 2057 kB/2222 kB 93%]                    66.1 kB/s 1min 22s[0m[33m82% [14 Packages store 0 B] [22 Packages 2069 kB/2222 kB 93%]                    66.1 kB/s 1min 22s[0m[33m82% [14 Packages store 0 B] [22 Packages 2155 kB/2222 kB 97%]                    66.1 kB/s 1min 21s[0m[33m82% [14 Packages store 0 B]                                                      66.1 kB/s 1min 20s[0m[33m82% [14 Packages store 0 B] [Waiting for headers]                                66.1 kB/s 1min 20s[0m                                                                                                   Get:31 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [342 kB]
+[33m82% [14 Packages store 0 B] [31 Translation-en 9841 B/342 kB 3%]                 66.1 kB/s 1min 20s[0m[33m82% [14 Packages store 0 B] [31 Translation-en 28.6 kB/342 kB 8%]                      211 kB/s 25s[0m[33m82% [14 Packages store 0 B] [31 Translation-en 138 kB/342 kB 40%]                      211 kB/s 24s[0m[33m83% [14 Packages store 0 B] [Waiting for headers]                                      211 kB/s 23s[0m                                                                                                   Get:32 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [13.6 kB]
+[33m83% [14 Packages store 0 B] [32 Commands-amd64 2643 B/13.6 kB 19%]                     211 kB/s 23s[0m[33m83% [14 Packages store 0 B]                                                            211 kB/s 23s[0m[33m83% [Waiting for headers]                                                              211 kB/s 23s[0m[33m83% [15 Translation-en store 0 B] [Waiting for headers]                                211 kB/s 23s[0m                                                                                                   Get:33 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [3145 kB]
+[33m83% [15 Translation-en store 0 B] [33 Packages 0 B/3145 kB 0%]                         211 kB/s 23s[0m[33m84% [15 Translation-en store 0 B] [33 Packages 432 kB/3145 kB 14%]                     211 kB/s 21s[0m[33m85% [15 Translation-en store 0 B] [33 Packages 799 kB/3145 kB 25%]                     211 kB/s 19s[0m[33m85% [33 Packages 887 kB/3145 kB 28%]                                                   211 kB/s 19s[0m[33m85% [16 Packages store 0 B] [33 Packages 887 kB/3145 kB 28%]                           211 kB/s 19s[0m[33m86% [16 Packages store 0 B] [33 Packages 1346 kB/3145 kB 43%]                          211 kB/s 17s[0m[33m88% [16 Packages store 0 B] [33 Packages 2347 kB/3145 kB 75%]                          211 kB/s 12s[0m[33m89% [16 Packages store 0 B] [33 Packages 2623 kB/3145 kB 83%]                          211 kB/s 11s[0m[33m90% [16 Packages store 0 B] [33 Packages 2986 kB/3145 kB 95%]                           211 kB/s 9s[0m[33m90% [16 Packages store 0 B]                                                             211 kB/s 8s[0m[33m90% [Waiting for headers]                                                               211 kB/s 8s[0m[33m90% [17 Translation-en store 0 B] [Waiting for headers]                                 211 kB/s 8s[0m[33m91% [Waiting for headers]                                                               211 kB/s 8s[0m[33m91% [18 Commands-amd64 store 0 B] [Waiting for headers]                                 211 kB/s 8s[0m[33m91% [Waiting for headers]                                                               211 kB/s 8s[0m                                                                                                   Get:34 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [558 kB]
+[33m91% [34 Translation-en 8401 B/558 kB 2%]                                                211 kB/s 8s[0m[33m91% [19 Packages store 0 B] [34 Translation-en 8401 B/558 kB 2%]                        211 kB/s 8s[0m[33m91% [34 Translation-en 111 kB/558 kB 20%]                                               211 kB/s 8s[0m[33m91% [20 Translation-en store 0 B] [34 Translation-en 170 kB/558 kB 30%]                 211 kB/s 7s[0m[33m92% [34 Translation-en 170 kB/558 kB 30%]                                               211 kB/s 7s[0m[33m92% [21 Commands-amd64 store 0 B] [34 Translation-en 260 kB/558 kB 47%]                 211 kB/s 7s[0m[33m92% [34 Translation-en 260 kB/558 kB 47%]                                               211 kB/s 7s[0m[33m92% [23 Packages store 0 B] [34 Translation-en 260 kB/558 kB 47%]                       211 kB/s 7s[0m[33m93% [34 Translation-en 443 kB/558 kB 79%]                                               211 kB/s 6s[0m[33m93% [24 Translation-en store 0 B] [34 Translation-en 443 kB/558 kB 79%]                 211 kB/s 6s[0m[33m93% [34 Translation-en 534 kB/558 kB 96%]                                               211 kB/s 6s[0m[33m93% [25 Commands-amd64 store 0 B] [34 Translation-en 534 kB/558 kB 96%]                 211 kB/s 6s[0m[33m93% [34 Translation-en 534 kB/558 kB 96%]                                               211 kB/s 6s[0m[33m94% [34 Translation-en 534 kB/558 kB 96%]                                               211 kB/s 6s[0m[33m94% [27 Packages store 0 B] [34 Translation-en 534 kB/558 kB 96%]                       211 kB/s 6s[0m[33m94% [Waiting for headers]                                                               211 kB/s 5s[0m[33m94% [28 Translation-en store 0 B] [Waiting for headers]                                 211 kB/s 5s[0m[33m94% [Waiting for headers]                                                               211 kB/s 5s[0m[33m94% [Waiting for headers]                                                               211 kB/s 5s[0m[33m95% [Waiting for headers]                                                               211 kB/s 5s[0m[33m95% [22 Packages store 0 B] [Waiting for headers]                                       211 kB/s 5s[0m                                                                                                   Get:35 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [972 kB]
+[33m95% [22 Packages store 0 B] [35 Packages 37.2 kB/972 kB 4%]                             211 kB/s 5s[0m[33m97% [22 Packages store 0 B] [35 Packages 867 kB/972 kB 89%]                             759 kB/s 0s[0m[33m97% [22 Packages store 0 B]                                                             759 kB/s 0s[0m                                                                                                   Get:36 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [209 kB]
+[33m97% [22 Packages store 0 B] [36 Translation-en 0 B/209 kB 0%]                           759 kB/s 0s[0m[33m97% [22 Packages store 0 B] [Waiting for headers]                                       759 kB/s 0s[0m                                                                                                   Get:37 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [21.7 kB]
+[33m97% [22 Packages store 0 B] [Waiting for headers]                                       759 kB/s 0s[0m                                                                                                   Get:38 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [39.6 kB]
+[33m97% [22 Packages store 0 B] [Waiting for headers]                                       759 kB/s 0s[0m                                                                                                   Get:39 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [8716 B]
+[33m97% [22 Packages store 0 B] [Waiting for headers]                                       759 kB/s 0s[0m                                                                                                   Get:40 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [368 B]
+[33m97% [22 Packages store 0 B]                                                             759 kB/s 0s[0m[33m97% [22 Packages store 0 B]                                                             759 kB/s 0s[0m[33m98% [Working]                                                                           759 kB/s 0s[0m[33m98% [31 Translation-en store 0 B]                                                       759 kB/s 0s[0m[33m98% [Working]                                                                           759 kB/s 0s[0m[33m98% [32 Commands-amd64 store 0 B]                                                       759 kB/s 0s[0m[33m98% [Working]                                                                           759 kB/s 0s[0m[33m98% [33 Packages store 0 B]                                                             759 kB/s 0s[0m[33m98% [33 Packages store 0 B]                                                             759 kB/s 0s[0m[33m98% [33 Packages store 0 B]                                                             759 kB/s 0s[0m[33m98% [Working]                                                                           759 kB/s 0s[0m[33m98% [34 Translation-en store 0 B]                                                       759 kB/s 0s[0m[33m99% [Working]                                                                           759 kB/s 0s[0m[33m99% [35 Packages store 0 B]                                                             759 kB/s 0s[0m[33m99% [Working]                                                                           759 kB/s 0s[0m[33m99% [36 Translation-en store 0 B]                                                       759 kB/s 0s[0m[33m99% [Working]                                                                           759 kB/s 0s[0m[33m99% [37 Commands-amd64 store 0 B]                                                       759 kB/s 0s[0m[33m99% [Working]                                                                           759 kB/s 0s[0m[33m99% [38 Packages store 0 B]                                                             759 kB/s 0s[0m[33m100% [Working]                                                                          759 kB/s 0s[0m[33m100% [39 Translation-en store 0 B]                                                      759 kB/s 0s[0m[33m100% [Working]                                                                          759 kB/s 0s[0m[33m100% [40 Commands-amd64 store 0 B]                                                      759 kB/s 0s[0m[33m100% [Working]                                                                          759 kB/s 0s[0m                                                                                                   Fetched 7211 kB in 55s (132 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 2%Reading package lists... 2%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 11%Reading package lists... 23%Reading package lists... 32%Reading package lists... 32%Reading package lists... 40%Reading package lists... 45%Reading package lists... 45%Reading package lists... 45%Reading package lists... 45%Reading package lists... 46%Reading package lists... 46%Reading package lists... 49%Reading package lists... 52%Reading package lists... 52%Reading package lists... 56%Reading package lists... 56%Reading package lists... 64%Reading package lists... 64%Reading package lists... 69%Reading package lists... 69%Reading package lists... 70%Reading package lists... 72%Reading package lists... 72%Reading package lists... 73%Reading package lists... 73%Reading package lists... 73%Reading package lists... 73%Reading package lists... 73%Reading package lists... 73%Reading package lists... 73%Reading package lists... 73%Reading package lists... 74%Reading package lists... 74%Reading package lists... 74%Reading package lists... 74%Reading package lists... 74%Reading package lists... 74%Reading package lists... 79%Reading package lists... 79%Reading package lists... 81%Reading package lists... 83%Reading package lists... 83%Reading package lists... 91%Reading package lists... 91%Reading package lists... 96%Reading package lists... 96%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 41%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... 55%Building dependency tree... 75%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+38 packages can be upgraded. Run 'apt list --upgradable' to see them.
+[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# sudo apt updateinstall apache2[9Pupdateinstall apache2
+[?2004lReading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils bzip2 libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap liblua5.3-0 mailcap mime-support ssl-cert
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser bzip2-doc
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils bzip2 libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap liblua5.3-0 mailcap mime-support ssl-cert
+0 upgraded, 13 newly installed, 0 to remove and 38 not upgraded.
+Need to get 1701 kB/2142 kB of archives.
+After this operation, 8528 kB of additional disk space will be used.
+Do you want to continue? [Y/n] u^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H
+Abort.
+[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# sudo apt install apache2
+[?2004lReading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... 97%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils bzip2 libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap liblua5.3-0 mailcap mime-support ssl-cert
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser bzip2-doc
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils bzip2 libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap liblua5.3-0 mailcap mime-support ssl-cert
+0 upgraded, 13 newly installed, 0 to remove and 38 not upgraded.
+Need to get 1701 kB/2142 kB of archives.
+After this operation, 8528 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+[33m30% [Working][0m[33m30% [Connecting to archive.ubuntu.com][0m                                      Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-bin amd64 2.4.52-1ubuntu4.14 [1349 kB]
+[33m                                      31% [1 apache2-bin 8346 B/1349 kB 1%][0m[33m33% [1 apache2-bin 76.0 kB/1349 kB 6%][0m[33m43% [1 apache2-bin 342 kB/1349 kB 25%][0m[33m                                      82% [Working][0m             Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-data all 2.4.52-1ubuntu4.14 [165 kB]
+[33m82% [2 apache2-data 0 B/165 kB 0%][0m[33m                                  90% [Waiting for headers][0m                         Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-utils amd64 2.4.52-1ubuntu4.14 [89.0 kB]
+[33m92% [3 apache2-utils 48.4 kB/89.0 kB 54%][0m[33m                                         95% [Waiting for headers][0m                         Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2 amd64 2.4.52-1ubuntu4.14 [97.9 kB]
+[33m96% [4 apache2 34.4 kB/97.9 kB 35%][0m[33m                                   100% [Working][0m              Fetched 1701 kB in 3s (585 kB/s)
+Preconfiguring packages ...
+
+7[0;51r8[1ASelecting previously unselected package libapr1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 34055 files and directories currently installed.)
+Preparing to unpack .../00-libapr1_1.7.0-8ubuntu0.22.04.2_amd64.deb ...
+7[52;0f[42m[30mProgress: [  0%][49m[39m [..............................................................................] 87[52;0f[42m[30mProgress: [  2%][49m[39m [#.............................................................................] 8Unpacking libapr1:amd64 (1.7.0-8ubuntu0.22.04.2) ...
+7[52;0f[42m[30mProgress: [  4%][49m[39m [##............................................................................] 8Selecting previously unselected package libaprutil1:amd64.
+Preparing to unpack .../01-libaprutil1_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+7[52;0f[42m[30mProgress: [  6%][49m[39m [####..........................................................................] 8Unpacking libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+7[52;0f[42m[30mProgress: [  8%][49m[39m [#####.........................................................................] 8Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+7[52;0f[42m[30mProgress: [  9%][49m[39m [#######.......................................................................] 8Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+7[52;0f[42m[30mProgress: [ 11%][49m[39m [########......................................................................] 8Selecting previously unselected package libaprutil1-ldap:amd64.
+Preparing to unpack .../03-libaprutil1-ldap_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+7[52;0f[42m[30mProgress: [ 13%][49m[39m [##########....................................................................] 8Unpacking libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+7[52;0f[42m[30mProgress: [ 15%][49m[39m [###########...................................................................] 8Selecting previously unselected package liblua5.3-0:amd64.
+Preparing to unpack .../04-liblua5.3-0_5.3.6-1build1_amd64.deb ...
+7[52;0f[42m[30mProgress: [ 17%][49m[39m [#############.................................................................] 8Unpacking liblua5.3-0:amd64 (5.3.6-1build1) ...
+7[52;0f[42m[30mProgress: [ 19%][49m[39m [##############................................................................] 8Selecting previously unselected package apache2-bin.
+Preparing to unpack .../05-apache2-bin_2.4.52-1ubuntu4.14_amd64.deb ...
+7[52;0f[42m[30mProgress: [ 21%][49m[39m [################..............................................................] 8Unpacking apache2-bin (2.4.52-1ubuntu4.14) ...
+7[52;0f[42m[30mProgress: [ 23%][49m[39m [#################.............................................................] 8Selecting previously unselected package apache2-data.
+Preparing to unpack .../06-apache2-data_2.4.52-1ubuntu4.14_all.deb ...
+7[52;0f[42m[30mProgress: [ 25%][49m[39m [###################...........................................................] 8Unpacking apache2-data (2.4.52-1ubuntu4.14) ...
+7[52;0f[42m[30mProgress: [ 26%][49m[39m [####################..........................................................] 8Selecting previously unselected package apache2-utils.
+Preparing to unpack .../07-apache2-utils_2.4.52-1ubuntu4.14_amd64.deb ...
+7[52;0f[42m[30mProgress: [ 28%][49m[39m [######################........................................................] 8Unpacking apache2-utils (2.4.52-1ubuntu4.14) ...
+7[52;0f[42m[30mProgress: [ 30%][49m[39m [#######################.......................................................] 8Selecting previously unselected package mailcap.
+Preparing to unpack .../08-mailcap_3.70+nmu1ubuntu1_all.deb ...
+7[52;0f[42m[30mProgress: [ 32%][49m[39m [#########################.....................................................] 8Unpacking mailcap (3.70+nmu1ubuntu1) ...
+7[52;0f[42m[30mProgress: [ 34%][49m[39m [##########################....................................................] 8Selecting previously unselected package mime-support.
+Preparing to unpack .../09-mime-support_3.66_all.deb ...
+7[52;0f[42m[30mProgress: [ 36%][49m[39m [###########################...................................................] 8Unpacking mime-support (3.66) ...
+7[52;0f[42m[30mProgress: [ 38%][49m[39m [#############################.................................................] 8Selecting previously unselected package apache2.
+Preparing to unpack .../10-apache2_2.4.52-1ubuntu4.14_amd64.deb ...
+7[52;0f[42m[30mProgress: [ 40%][49m[39m [##############################................................................] 8Unpacking apache2 (2.4.52-1ubuntu4.14) ...
+7[52;0f[42m[30mProgress: [ 42%][49m[39m [################################..............................................] 8Selecting previously unselected package bzip2.
+Preparing to unpack .../11-bzip2_1.0.8-5build1_amd64.deb ...
+7[52;0f[42m[30mProgress: [ 43%][49m[39m [#################################.............................................] 8Unpacking bzip2 (1.0.8-5build1) ...
+7[52;0f[42m[30mProgress: [ 45%][49m[39m [###################################...........................................] 8Selecting previously unselected package ssl-cert.
+Preparing to unpack .../12-ssl-cert_1.1.2_all.deb ...7[52;0f[42m[30mProgress: [ 47%][49m[39m [####################################..........................................] 8
+Unpacking ssl-cert (1.1.2) ...
+7[52;0f[42m[30mProgress: [ 49%][49m[39m [######################################........................................] 8Setting up libapr1:amd64 (1.7.0-8ubuntu0.22.04.2) ...
+7[52;0f[42m[30mProgress: [ 51%][49m[39m [#######################################.......................................] 87[52;0f[42m[30mProgress: [ 53%][49m[39m [#########################################.....................................] 8Setting up bzip2 (1.0.8-5build1) ...
+7[52;0f[42m[30mProgress: [ 55%][49m[39m [##########################################....................................] 87[52;0f[42m[30mProgress: [ 57%][49m[39m [############################################..................................] 8Setting up ssl-cert (1.1.2) ...
+7[52;0f[42m[30mProgress: [ 58%][49m[39m [#############################################.................................] 87[52;0f[42m[30mProgress: [ 60%][49m[39m [###############################################...............................] 8Setting up liblua5.3-0:amd64 (5.3.6-1build1) ...
+7[52;0f[42m[30mProgress: [ 62%][49m[39m [################################################..............................] 87[52;0f[42m[30mProgress: [ 64%][49m[39m [##################################################............................] 8Setting up apache2-data (2.4.52-1ubuntu4.14) ...
+7[52;0f[42m[30mProgress: [ 66%][49m[39m [###################################################...........................] 87[52;0f[42m[30mProgress: [ 68%][49m[39m [####################################################..........................] 8Setting up mailcap (3.70+nmu1ubuntu1) ...
+7[52;0f[42m[30mProgress: [ 70%][49m[39m [######################################################........................] 87[52;0f[42m[30mProgress: [ 72%][49m[39m [#######################################################.......................] 8Setting up libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+7[52;0f[42m[30mProgress: [ 74%][49m[39m [#########################################################.....................] 87[52;0f[42m[30mProgress: [ 75%][49m[39m [##########################################################....................] 8Setting up mime-support (3.66) ...
+7[52;0f[42m[30mProgress: [ 77%][49m[39m [############################################################..................] 87[52;0f[42m[30mProgress: [ 79%][49m[39m [#############################################################.................] 8Setting up libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+7[52;0f[42m[30mProgress: [ 81%][49m[39m [###############################################################...............] 87[52;0f[42m[30mProgress: [ 83%][49m[39m [################################################################..............] 8Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+7[52;0f[42m[30mProgress: [ 85%][49m[39m [##################################################################............] 87[52;0f[42m[30mProgress: [ 87%][49m[39m [###################################################################...........] 8Setting up apache2-utils (2.4.52-1ubuntu4.14) ...
+7[52;0f[42m[30mProgress: [ 89%][49m[39m [#####################################################################.........] 87[52;0f[42m[30mProgress: [ 91%][49m[39m [######################################################################........] 8Setting up apache2-bin (2.4.52-1ubuntu4.14) ...
+7[52;0f[42m[30mProgress: [ 92%][49m[39m [########################################################################......] 87[52;0f[42m[30mProgress: [ 94%][49m[39m [#########################################################################.....] 8Setting up apache2 (2.4.52-1ubuntu4.14) ...
+7[52;0f[42m[30mProgress: [ 96%][49m[39m [###########################################################################...] 8Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+7[52;0f[42m[30mProgress: [ 98%][49m[39m [############################################################################..] 8Processing triggers for ufw (0.36.1-4ubuntu0.1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.9) ...
+
+7[0;52r8[1A[JScanning processes... [                                                                            ]Scanning processes... [==                                                                          ]Scanning processes... [====                                                                        ]Scanning processes... [=======                                                                     ]Scanning processes... [=========                                                                   ]Scanning processes... [============                                                                ]Scanning processes... [==============                                                              ]Scanning processes... [=================                                                           ]Scanning processes... [===================                                                         ]Scanning processes... [======================                                                      ]Scanning processes... [========================                                                    ]Scanning processes... [==========================                                                  ]Scanning processes... [=============================                                               ]Scanning processes... [===============================                                             ]Scanning processes... [==================================                                          ]Scanning processes... [====================================                                        ]Scanning processes... [=======================================                                     ]Scanning processes... [=========================================                                   ]Scanning processes... [============================================                                ]Scanning processes... [==============================================                              ]Scanning processes... [=================================================                           ]Scanning processes... [===================================================                         ]Scanning processes... [=====================================================                       ]Scanning processes... [========================================================                    ]Scanning processes... [==========================================================                  ]Scanning processes... [=============================================================               ]Scanning processes... [===============================================================             ]Scanning processes... [==================================================================          ]Scanning processes... [====================================================================        ]Scanning processes... [=======================================================================     ]Scanning processes... [=========================================================================   ]Scanning processes... [============================================================================]Scanning processes...                                                                               
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# sudo apt install apache2[Ksystecmt[K[K[K,[Kmctl status apacje[K[Khe
+[?2004l[?1h=Unit apache.service could not be found.[m
+[K[?1l>[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# systemctl status apache2
+[?2004l[?1h=[0;1;32m●[0m apache2.service - The Apache HTTP Server[m
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)[m
+     Active: [0;1;32mactive (running)[0m since Tue 2025-04-15 11:31:57 UTC; 54s ago[m
+       Docs: https://httpd.apache.org/docs/2.4/[m
+   Main PID: 2420 (apache2)[m
+      Tasks: 55 (limit: 3991)[m
+     Memory: 6.8M[m
+        CPU: 1.090s[m
+     CGroup: /system.slice/apache2.service[m
+             ├─2420 /usr/sbin/apache2 -k start[m
+             ├─2422 /usr/sbin/apache2 -k start[m
+             └─2423 /usr/sbin/apache2 -k start[m
+[m
+Apr 15 11:31:56 ContainerFor6Lesson systemd[1]: Starting The Apache HTTP Server...[m
+Apr 15 11:31:57 ContainerFor6Lesson systemd[1]: Started The Apache HTTP Server.[m
+[K[?1l>[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# сгкд [K[K[K[K[Kcurl los[K[K[Khttp://locla[K[Kalhost
+[?2004l<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!--
+    Modified from the Debian original for Ubuntu
+    Last updated: 2022-03-22
+    See: https://launchpad.net/bugs/1966004
+  -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Apache2 Ubuntu Default Page: It works</title>
+    <style type="text/css" media="screen">
+  * {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  body, html {
+    padding: 3px 3px 3px 3px;
+
+    background-color: #D8DBE2;
+
+    font-family: Ubuntu, Verdana, sans-serif;
+    font-size: 11pt;
+    text-align: center;
+  }
+
+  div.main_page {
+    position: relative;
+    display: table;
+
+    width: 800px;
+
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 0px;
+
+    border-width: 2px;
+    border-color: #212738;
+    border-style: solid;
+
+    background-color: #FFFFFF;
+
+    text-align: center;
+  }
+
+  div.page_header {
+    height: 180px;
+    width: 100%;
+
+    background-color: #F5F6F7;
+  }
+
+  div.page_header span {
+    margin: 15px 0px 0px 50px;
+
+    font-size: 180%;
+    font-weight: bold;
+  }
+
+  div.page_header img {
+    margin: 3px 0px 0px 40px;
+
+    border: 0px 0px 0px;
+  }
+
+  div.banner {
+    padding: 9px 6px 9px 6px;
+    background-color: #E9510E;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 112%;
+    text-align: center;
+    position: absolute;
+    left: 40%;
+    bottom: 30px;
+    width: 20%;
+  }
+
+  div.table_of_contents {
+    clear: left;
+
+    min-width: 200px;
+
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.table_of_contents_item {
+    clear: left;
+
+    width: 100%;
+
+    margin: 4px 0px 0px 0px;
+
+    background-color: #FFFFFF;
+
+    color: #000000;
+    text-align: left;
+  }
+
+  div.table_of_contents_item a {
+    margin: 6px 0px 0px 6px;
+  }
+
+  div.content_section {
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.content_section_text {
+    padding: 4px 8px 4px 8px;
+
+    color: #000000;
+    font-size: 100%;
+  }
+
+  div.content_section_text pre {
+    margin: 8px 0px 8px 0px;
+    padding: 8px 8px 8px 8px;
+
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #000000;
+
+    background-color: #F5F6F7;
+
+    font-style: italic;
+  }
+
+  div.content_section_text p {
+    margin-bottom: 6px;
+  }
+
+  div.content_section_text ul, div.content_section_text li {
+    padding: 4px 8px 4px 16px;
+  }
+
+  div.section_header {
+    padding: 3px 6px 3px 6px;
+
+    background-color: #8E9CB2;
+
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 112%;
+    text-align: center;
+  }
+
+  div.section_header_grey {
+    background-color: #9F9386;
+  }
+
+  .floating_element {
+    position: relative;
+    float: left;
+  }
+
+  div.table_of_contents_item a,
+  div.content_section_text a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  div.table_of_contents_item a:link,
+  div.table_of_contents_item a:visited,
+  div.table_of_contents_item a:active {
+    color: #000000;
+  }
+
+  div.table_of_contents_item a:hover {
+    background-color: #000000;
+
+    color: #FFFFFF;
+  }
+
+  div.content_section_text a:link,
+  div.content_section_text a:visited,
+   div.content_section_text a:active {
+    background-color: #DCDFE6;
+
+    color: #000000;
+  }
+
+  div.content_section_text a:hover {
+    background-color: #000000;
+
+    color: #DCDFE6;
+  }
+
+  div.validator {
+  }
+    </style>
+  </head>
+  <body>
+    <div class="main_page">
+      <div class="page_header floating_element">
+        <img src="icons/ubuntu-logo.png" alt="Ubuntu Logo"
+             style="width:184px;height:146px;" class="floating_element" />
+        <div>
+          <span style="margin-top: 1.5em;" class="floating_element">
+            Apache2 Default Page
+          </span>
+        </div>
+        <div class="banner">
+          <div id="about"></div>
+          It works!
+        </div>
+
+      </div>
+      <div class="content_section floating_element">
+        <div class="content_section_text">
+          <p>
+                This is the default welcome page used to test the correct 
+                operation of the Apache2 server after installation on Ubuntu systems.
+                It is based on the equivalent page on Debian, from which the Ubuntu Apache
+                packaging is derived.
+                If you can read this page, it means that the Apache HTTP server installed at
+                this site is working properly. You should <b>replace this file</b> (located at
+                <tt>/var/www/html/index.html</tt>) before continuing to operate your HTTP server.
+          </p>
+
+          <p>
+                If you are a normal user of this web site and don't know what this page is
+                about, this probably means that the site is currently unavailable due to
+                maintenance.
+                If the problem persists, please contact the site's administrator.
+          </p>
+
+        </div>
+        <div class="section_header">
+          <div id="changes"></div>
+                Configuration Overview
+        </div>
+        <div class="content_section_text">
+          <p>
+                Ubuntu's Apache2 default configuration is different from the
+                upstream default configuration, and split into several files optimized for
+                interaction with Ubuntu tools. The configuration system is
+                <b>fully documented in
+                /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full
+                documentation. Documentation for the web server itself can be
+                found by accessing the <a href="/manual">manual</a> if the <tt>apache2-doc</tt>
+                package was installed on this server.
+          </p>
+          <p>
+                The configuration layout for an Apache2 web server installation on Ubuntu systems is as follows:
+          </p>
+          <pre>
+/etc/apache2/
+|-- apache2.conf
+|       `--  ports.conf
+|-- mods-enabled
+|       |-- *.load
+|       `-- *.conf
+|-- conf-enabled
+|       `-- *.conf
+|-- sites-enabled
+|       `-- *.conf
+          </pre>
+          <ul>
+                        <li>
+                           <tt>apache2.conf</tt> is the main configuration
+                           file. It puts the pieces together by including all remaining configuration
+                           files when starting up the web server.
+                        </li>
+
+                        <li>
+                           <tt>ports.conf</tt> is always included from the
+                           main configuration file. It is used to determine the listening ports for
+                           incoming connections, and this file can be customized anytime.
+                        </li>
+
+                        <li>
+                           Configuration files in the <tt>mods-enabled/</tt>,
+                           <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain
+                           particular configuration snippets which manage modules, global configuration
+                           fragments, or virtual host configurations, respectively.
+                        </li>
+
+                        <li>
+                           They are activated by symlinking available
+                           configuration files from their respective
+                           *-available/ counterparts. These should be managed
+                           by using our helpers
+                           <tt>
+                                a2enmod,
+                                a2dismod,
+                           </tt>
+                           <tt>
+                                a2ensite,
+                                a2dissite,
+                            </tt>
+                                and
+                           <tt>
+                                a2enconf,
+                                a2disconf
+                           </tt>. See their respective man pages for detailed information.
+                        </li>
+
+                        <li>
+                           The binary is called apache2 and is managed using systemd, so to
+                           start/stop the service use <tt>systemctl start apache2</tt> and
+                           <tt>systemctl stop apache2</tt>, and use <tt>systemctl status apache2</tt>
+                           and <tt>journalctl -u apache2</tt> to check status.  <tt>system</tt>
+                           and <tt>apache2ctl</tt> can also be used for service management if
+                           desired.
+                           <b>Calling <tt>/usr/bin/apache2</tt> directly will not work</b> with the
+                           default configuration.
+                        </li>
+          </ul>
+        </div>
+
+        <div class="section_header">
+            <div id="docroot"></div>
+                Document Roots
+        </div>
+
+        <div class="content_section_text">
+            <p>
+                By default, Ubuntu does not allow access through the web browser to
+                <em>any</em> file outside of those located in <tt>/var/www</tt>,
+                <a href="http://httpd.apache.org/docs/2.4/mod/mod_userdir.html" rel="nofollow">public_html</a>
+                directories (when enabled) and <tt>/usr/share</tt> (for web
+                applications). If your site is using a web document root
+                located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your
+                document root directory in <tt>/etc/apache2/apache2.conf</tt>.
+            </p>
+            <p>
+                The default Ubuntu document root is <tt>/var/www/html</tt>. You
+                can make your own virtual hosts under /var/www.
+            </p>
+        </div>
+
+        <div class="section_header">
+          <div id="bugs"></div>
+                Reporting Problems
+        </div>
+        <div class="content_section_text">
+          <p>
+                Please use the <tt>ubuntu-bug</tt> tool to report bugs in the
+                Apache2 package with Ubuntu. However, check <a
+                href="https://bugs.launchpad.net/ubuntu/+source/apache2"
+                rel="nofollow">existing bug reports</a> before reporting a new bug.
+          </p>
+          <p>
+                Please report bugs specific to modules (such as PHP and others)
+                to their respective packages, not to the web server itself.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <div class="validator">
+    </div>
+  </body>
+</html>
+[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# 
+[?2004l[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# curl http://localhost[Kcurl http://localhost[Kcurl http://localhost[Kшз ф[K[K[K[Kшз [K[K[Kip ad
+[?2004l1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+4: eth0@if5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 00:16:3e:28:2e:d0 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.35.110.196/24 metric 100 brd 10.35.110.255 scope global dynamic eth0
+       valid_lft 2824sec preferred_lft 2824sec
+    inet6 fd42:b2d5:e19e:5118:216:3eff:fe28:2ed0/64 scope global mngtmpaddr noprefixroute 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::216:3eff:fe28:2ed0/64 scope link 
+       valid_lft forever preferred_lft forever
+[?2004h]0;root@ContainerFor6Lesson: ~root@ContainerFor6Lesson:~# exit
+[?2004lexit
+[?2004h]0;kartoger@VMServer: ~/CodebyDevops/lesson6kartoger@VMServer:~/CodebyDevops/lesson6$ exit
+[?2004lexit
+
+Script done on 2025-04-15 16:37:41+05:00 [COMMAND_EXIT_CODE="0"]
