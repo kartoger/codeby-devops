@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/focal64"
+  config.vm.box_check_update = false
+
+  config.vm.define "prod" do |prod|
+    prod.vm.hostname = "prod"
+    prod.vm.network "public_network"
+    prod.vm.provider "virtualbox" do |vb|
+      vb.name = "ubuntuVagrantServer"
+      vb.memory = 2048
+      vb.cpus = 4
+    end
+    prod.vm.provision "shell", path: "provision.sh", args: ["prod"]
+  end
+
+  config.vm.define "dev" do |dev|
+    dev.vm.hostname = "dev"
+    dev.vm.network "public_network"
+    dev.vm.provider "virtualbox" do |vb|
+      vb.name = "ubuntuVagrantStore"
+      vb.memory = 2048
+      vb.cpus = 4
+    end
+    dev.vm.provision "shell", path: "provision.sh", args: ["dev"]
+  end
+
+end

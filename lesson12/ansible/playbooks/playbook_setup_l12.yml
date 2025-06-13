@@ -1,0 +1,30 @@
+---
+- name: Setup
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Installing WGET
+      ansible.builtin.apt:
+        name: wget
+        state: present
+
+    - name: Installing HTOP
+      ansible.builtin.apt:
+        name: htop
+        state: present
+
+    - name: Installing NGINX
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Starting NGINX
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Display environment information
+      ansible.builtin.debug:
+        msg: "This host in {{ inventory_hostname }} environment."
