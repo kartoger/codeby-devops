@@ -1,0 +1,12 @@
+---
+# defaults file for wordpress
+mysql_db_name: wordpress
+apache_service_name:
+  Debian: apache2
+  RedHat: httpd
+mysql_user: UserWP
+mysql_password: Pass-Word_press!worD
+wordpress_download_url: https://wordpress.org/latest.tar.gz
+wordpress_dir: /var/www/html
+web_owner: "{{ 'www-data' if ansible_os_family == 'Debian' else 'apache' }}"
+web_group: "{{ web_owner }}"

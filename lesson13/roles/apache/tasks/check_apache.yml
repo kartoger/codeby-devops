@@ -1,0 +1,8 @@
+---
+# tasks file for apache
+- name: Apache | Check Start
+  service:
+    name: "{{ apache_service_name[ansible_os_family] }}"
+    state: started
+    enabled: true
+  become: true

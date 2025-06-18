@@ -1,0 +1,8 @@
+---
+# tasks file for apache
+
+- name: Apache | Install
+  package:
+    name: "{{ apache_package_name[ansible_os_family] }}"
+    state: present
+  become: true

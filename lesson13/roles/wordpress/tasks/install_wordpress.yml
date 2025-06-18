@@ -1,0 +1,41 @@
+---
+# tasks file for wordpress
+
+- name: WordPress | Downloading
+  get_url:
+    url: "{{wordpress_download_url }}"
+    dest: /tmp/wordpress.tar.gz
+  become: true
+
+- name: WordPress | Unzip
+  unarchive:
+    src: /tmp/wordpress.tar.gz
+    dest: /tmp/
+    remote_src: yes
+  become: true
+  
+- name: WordPress | Create Dir
+  file:
+    path: "{{ wordpress_dir }}"
+    state: directory
+    owner: "{{ web_owner }}"
+    group: "{{ web_group }}"
+    mode: '0755'
+    recurse: yes
+  become: true
+
+- name: WordPress | Copy
+  copy:
+    src: /tmp/wordpress/
+    dest: "{{ wordpress_dir }}"
+    remote_src: yes
+    owner: "{{ web_owner }}"
+    group: "{{ web_group }}"
+    mode: '0755'
+  become: true
+
+- name: WordPress | Delete zip
+  file:
+    path: /tmp/wordpress.tar.gz
+    state: absent
+  become: true

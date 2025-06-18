@@ -1,0 +1,5 @@
+- name: WordPress | INSTALL
+  hosts: db
+  become: true
+  roles:
+   - wordpress
