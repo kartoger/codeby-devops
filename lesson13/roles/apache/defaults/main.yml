@@ -1,0 +1,27 @@
+---
+# defaults file for apache
+apache_service_name:
+  Debian: apache2
+  RedHat: httpd
+apache_package_name:
+  Debian:
+    - apache2
+  RedHat:
+    - httpd
+php_packages:
+  Debian:
+    - php
+    - php-mysql
+    - php-curl
+    - php-gd
+    - php-mbstring
+    - php-xml
+    - php-zip
+  RedHat:
+    - php
+    - php-mysqlnd
+    - php-cli
+    - php-gd
+    - php-mbstring
+    - php-xml
+    - php-json

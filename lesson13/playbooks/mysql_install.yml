@@ -1,0 +1,5 @@
+- name: MYSQL | INSTALL
+  hosts: db
+  become: true
+  roles:
+   - mysql

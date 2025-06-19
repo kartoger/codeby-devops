@@ -1,0 +1,5 @@
+- name: APACHE | PHP | INSTALL
+  hosts: db
+  become: true
+  roles:
+   - apache

@@ -1,0 +1,17 @@
+all:
+  vars:
+    ansible_user: vagrant
+    ansible_python_interpreter: /usr/bin/python3
+    ansible_ssh_private_key_file: /home/kartoger/.ssh/foransible_id
+    environment: dev
+
+  children:
+    db:
+      hosts:
+        ubuntu_db:
+          ansible_host: 192.168.101.9
+          ansible_python_interpreter: /usr/bin/python3
+
+        centos_db:
+          ansible_host: 192.168.101.18
+          ansible_python_interpreter: /usr/bin/python3

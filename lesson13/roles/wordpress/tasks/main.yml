@@ -1,0 +1,7 @@
+---
+# tasks file for wordpress
+- name: Installing WordPress
+  import_tasks: install_wordpress.yml
+  
+- name: Configuring WordPress
+  import_tasks: conf_wordpress.yml

@@ -1,0 +1,16 @@
+---
+# tasks file for mysql
+
+
+- name: Installing mysql
+  import_tasks: install_mysql.yml
+
+
+- name: Checking mysql
+  import_tasks: check_mysql.yml
+
+- name: Install_pymysql
+  import_tasks: pymysql_install.yml
+  
+- name: Creating DB
+  import_tasks: create_db.yml

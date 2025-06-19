@@ -1,0 +1,12 @@
+---
+# tasks file for apache
+
+- name: Installing apache
+  import_tasks: install_apache.yml
+
+- name: Checking apache
+  import_tasks: check_apache.yml
+  
+- name: Installing php
+  import_tasks: install_php.yml
+  notify: Restart Apache

@@ -1,0 +1,19 @@
+- name: PyMySQL | Install pip
+  package:
+    name: python3-pip
+    state: present
+  become: true
+
+- name: PyMySQL | Install packaging
+  pip:
+    name: packaging
+    executable: pip3
+  become: true
+  
+- name: PyMySQL | Install
+  pip:
+    name: PyMySQL
+    executable: pip3
+  become: true
+  
+  

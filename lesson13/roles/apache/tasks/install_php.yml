@@ -1,0 +1,5 @@
+- name: PHP | Install
+  package:
+    name: "{{ php_packages[ansible_os_family] }}"
+    state: present
+  become: true

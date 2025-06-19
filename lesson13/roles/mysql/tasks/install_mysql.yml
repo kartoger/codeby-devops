@@ -1,0 +1,9 @@
+---
+# tasks file for mysql
+# install_mysql
+
+- name: Mysql | Install Packages
+  become: true
+  package:
+    name: "{{ mysql_packages[ansible_os_family] }}"
+    state: present 
