@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: diagnostic-sa
+  namespace: dev
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: pod-scan
+  namespace: dev
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: pod-scan-binding
+  namespace: dev
+subjects:
+- kind: ServiceAccount
+  name: diagnostic-sa
+  namespace: dev
+roleRef:
+  kind: Role
+  name: pod-scan
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: diagnostics
+  namespace: dev
+spec:
+  serviceAccountName: diagnostic-sa
+  restartPolicy: Never
+  containers:
+  - name: kubectl
+    image: bitnami/kubectl:latest
+    command: ["sh", "-c"]
+    args:
+      - |
+        echo "Pods in dev namespace:";
+        kubectl get pods -n dev -l app=wordpress;
+        sleep 30;
