@@ -1,0 +1,45 @@
+namespace: dev
+
+
+mysql:
+  image: mysql:5.7                       
+  rootPassword: wordpress                
+  database: wordpress                    
+  user: wp_user                          
+  password: wp_pass                      
+  storage: 1Gi                           
+  storagePath: /opt/mysql-data           
+  storageClass: local-storage            
+
+
+wordpress:
+  image: wordpress:6.5.2-apache          
+  replicaCount: 1                        
+  dbHost: mysql.dev.svc.cluster.local    
+
+  storage: 1Gi                           
+  storagePath: /opt/wp-data              
+  storageClass: local-storage            
+
+  tablePrefix: "wp_"                     
+  debug: "false"                         
+  extraConfig: ""                        
+
+  hpa:
+    enabled: true                        # Включить HPA
+    minReplicas: 1                       # Минимум реплик
+    maxReplicas: 5                       # Максимум реплик
+    targetCPUUtilizationPercentage: 50   # Целевая загрузка CPU в %
+
+ingress:
+  enabled: true                          
+  host: wordpress.local                  
+
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "512Mi"

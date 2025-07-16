@@ -1,0 +1,21 @@
+{{- if .Values.wordpress.hpa.enabled }}
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "wordpress-chart.fullname" . }}-hpa
+  namespace: {{ .Values.namespace }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "wordpress-chart.fullname" . }}
+  minReplicas: {{ .Values.wordpress.hpa.minReplicas }}
+  maxReplicas: {{ .Values.wordpress.hpa.maxReplicas }}
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.wordpress.hpa.targetCPUUtilizationPercentage }}
+{{- end }}
