@@ -1,0 +1,60 @@
+name: CI Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+# подготавливаем среду
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        app:
+          - simple-java-maven-app
+          - simple-java-maven-app-Devops
+          - simple-java-maven-app-Jenkins
+# сделали checkout
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+# подгатавливаем среду для сборки
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+# зависимости в кэш 
+      - name: Cache the Maven packages to speed up build
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven-
+# собрали проверили
+      - name: Build and test
+        run: mvn -B -f ${{ matrix.app }}/pom.xml clean verify
+# вытащили артефакты 
+      - name: Upload artifact (jar)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.app }}-jar
+          path: ${{ matrix.app }}/target/*.jar
+# собрали докер образ 
+      - name: Build Docker image
+        run: |
+          IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/${{ matrix.app }}:latest
+          docker build -t $IMAGE_NAME ${{ matrix.app }}
+          echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
+#залогинились в ghcr 
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+# отправили артефакт в ghcr
+      - name: Push Docker image
+        run: docker push $IMAGE_NAME
